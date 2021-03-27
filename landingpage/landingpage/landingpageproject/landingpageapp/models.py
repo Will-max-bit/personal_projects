@@ -16,3 +16,6 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='categories')
 
+    def __str__(self):
+        return self.title
+    
