@@ -9,7 +9,7 @@ landing page will be blog style web application where I post daily programming u
 
 * Django 3.1
 * VueJS 3.0
-* MaterializeCSS
+* Bootstrap V5
 
 
 ## Features

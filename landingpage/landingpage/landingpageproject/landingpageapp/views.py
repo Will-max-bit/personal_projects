@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Post, Category
+from datetime import datetime
 
 def index(request):
     return render(request, 'landingpageapp/index.html')
@@ -19,3 +20,7 @@ def load_posts(request):
             'created_date': post.created_date.strftime('%b %d %Y'),
         })
     return JsonResponse({'posts': post_data,})
+
+def new_post(request):
+    
+    pass

@@ -1,71 +1,103 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="{% static 'landingpageapp/css/styling.css'%}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Journey</title>
 </head>
 
 <body>
     <div id="app">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo center">Logo</a>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                <div class="col s12 m7">
-                    <div class="card" v-for="post in posts">
-                        <div class="card-image">
-                            <img v-bind:src="post.post_image">
-                            <span class="card-title">[[post.title]]</span>
-                        </div>
-                        <div class="card-content">
-                            <p><strong>[[post.category]]</strong></p>
-                            <p>[[ post.text]]</p>
-                            <p>[[post.created_date]]</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
+        <ul class="nav justify-content-end sticky-top mt-1">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Challenges</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Tutorials</a>
+            </li>
+            <li>
+                <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    New Post
+                </button>
+            </li>
+        </ul>
+        
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" placeholder="title"  id="FormControlTextarea1" rows="1"></textarea>
+                        <textarea class="form-control" placeholder="body" id="FormControlTextarea1" rows="3"></textarea>
+                        <input class="form-control form-control-sm" id="post_image" type="file" accept="image/*" />
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm ">
+                            <option value="" disabled selected>category</option>
+                            <option  placeholder="What's happening?"></option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" v-on:click="newPost" class="btn btn-primary">post</button>
                     </div>
                 </div>
             </div>
-            <h1>[[message]]</h1>
         </div>
 
+        <div id='holding'>
+            <img src="../landingpageapp/static/landingpageapp/css/images/test1.jpg" alt="">
+        </div>
+        <div class="container">
+            <div class="card" v-for="post in posts">
+                <div class="card-body">
+                    <h5 class="card-title">[[post.title]]</h5>
+                    <p><strong>[[post.category]]</strong></p>
+                    <p class="card-text">[[post.text]]</p>
+
+                    <p class="card-text"><small class="text-muted">[[post.created_date]]</small></p>
+                </div>
+                <img v-bind:src="post.post_image" class="card-img-bottom" alt="...">
+            </div>
+        </div>
     </div>
-    <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
     <script>
         let app = new Vue({
             el: '#app',
             delimiters: ['[[', ']]'],
             data: {
                 message: 'hello world',
-                posts: []
+                posts: [],
+                text: '',
+                title: '',
+                category:'',
+                created_date: '',
+                post_image: '',
+                category_id: '',
+
             },
             methods: {
-                postIndex: function (){
+                postIndex: function () {
                     axios({
                         url: "{% url 'landingpageapp:load_posts' %}",
                         method: 'get',
@@ -74,13 +106,36 @@
                         this.posts = response.data.posts
                     })
                 },
+                newPost: function (){
+                    let form_data = new FormData()
+                    let post_image = document.querySelector('#post_image')
+                    form_data.append('post_image', post_image.files[0])
+                    form_data.append('text', this.text )
+                    form_data.append('title', this.title)
+                    form_data.append('created_date', this.created_date)
+                    form_data.append('category_id', this.category_id )
+                    axios({
+                        url: "{% url 'landingpageapp:new_post' %}",
+                        method: "post",
+                        data: form_data,
+                        headers: {
+                            "X-CSRFToken": "{{ csrf_token }}" 
+                        }
+                    }).then(response => {
+                        this.text = ''
+                        this.title = ''
+                        post_image.value = ''
+                        this.category_id = ''
+                        this.postIndex()
+                    })
+
+                }
             },
-            created: function() {
+            created: function () {
                 this.postIndex()
             }
         })
     </script>
-
 </body>
 
 </html>
