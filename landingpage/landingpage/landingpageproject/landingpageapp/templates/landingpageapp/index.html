@@ -49,7 +49,7 @@
                         <input class="form-control form-control-sm" id="post_image" type="file" accept="image/*" />
                         <select class="form-select form-select-sm" aria-label=".form-select-sm ">
                             <option value="" disabled selected>category</option>
-                            <option  placeholder="What's happening?"></option>
+                            <option v-for="category in categories" v-bind:value="category.id" >[[category.name]]</option>
                         </select>
                     </div>
                     <div class="modal-footer">
@@ -60,9 +60,9 @@
             </div>
         </div>
 
-        <div id='holding'>
+        <!-- <div id='holding'>
             <img src="../landingpageapp/static/landingpageapp/css/images/test1.jpg" alt="">
-        </div>
+        </div> -->
         <div class="container">
             <div class="card" v-for="post in posts">
                 <div class="card-body">
@@ -86,7 +86,6 @@
             el: '#app',
             delimiters: ['[[', ']]'],
             data: {
-                message: 'hello world',
                 posts: [],
                 text: '',
                 title: '',
@@ -94,6 +93,7 @@
                 created_date: '',
                 post_image: '',
                 category_id: '',
+                categories: '',
 
             },
             methods: {
@@ -107,6 +107,7 @@
                     })
                 },
                 newPost: function (){
+                    console.log(this.category_id, 'cat_id')
                     let form_data = new FormData()
                     let post_image = document.querySelector('#post_image')
                     form_data.append('post_image', post_image.files[0])
@@ -129,10 +130,19 @@
                         this.postIndex()
                     })
 
+                },
+                loadCategories: function (){
+                    axios({
+                        url: "{% url 'landingpageapp:get_categories' %}",
+                        method: 'get'
+                    }).then(response => {
+                        this.categories = response.data.categories
+                    })
                 }
             },
             created: function () {
                 this.postIndex()
+                this.loadCategories()
             }
         })
     </script>

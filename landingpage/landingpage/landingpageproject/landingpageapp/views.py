@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Post, Category
 from datetime import datetime
+from django.utils.timezone import get_current_timezone
 
 def index(request):
     return render(request, 'landingpageapp/index.html')
@@ -22,5 +23,25 @@ def load_posts(request):
     return JsonResponse({'posts': post_data,})
 
 def new_post(request):
+    category_id = request.POST['category_id']
+    created_date = request.POST['created_date']
+    tz = get_current_timezone()
+    post = Post(
+        title = request.POST['title'],
+        text = request.POST['text'],
+        post_image = request.FILES['post_image'],
+        category = Category.objects.get(id=category_id),
+    )
+    post.save()
+    return HttpResponse('saved')
+
+def get_categories(request):
+    categories = Category.objects.all()
+    category_data = []
+    for category in categories:
+        category_data.append({
+            'name': category.name,
+            'id': category.id,
+        })
     
-    pass
+    return JsonResponse({'categories': category_data})
