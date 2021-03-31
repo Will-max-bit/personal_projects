@@ -18,14 +18,8 @@
 <body>
     <div id="app">
         <ul class="nav justify-content-end sticky-top mt-1">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Challenges</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Tutorials</a>
+            <li class="nav-item" v-for="category in categories">
+                <a class="nav-link active" v-on:click="postIndex"  aria-current="page" v-bind:value="category.id" href="#">[[category.name]]</a>
             </li>
             <li>
                 <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -44,10 +38,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <textarea class="form-control" placeholder="title"  id="FormControlTextarea1" rows="1"></textarea>
-                        <textarea class="form-control" placeholder="body" id="FormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" placeholder="title" v-model="title"  id="FormControlTextarea1" rows="1"></textarea>
+                        <textarea class="form-control" placeholder="body" v-model="text" id="FormControlTextarea1" rows="3"></textarea>
                         <input class="form-control form-control-sm" id="post_image" type="file" accept="image/*" />
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm ">
+                        <select class="form-select form-select-sm" v-model="category_id" aria-label=".form-select-sm ">
                             <option value="" disabled selected>category</option>
                             <option v-for="category in categories" v-bind:value="category.id" >[[category.name]]</option>
                         </select>
@@ -64,7 +58,7 @@
             <img src="../landingpageapp/static/landingpageapp/css/images/test1.jpg" alt="">
         </div> -->
         <div class="container">
-            <div class="card" v-for="post in posts">
+            <div class="card mt-1" v-for="post in posts">
                 <div class="card-body">
                     <h5 class="card-title">[[post.title]]</h5>
                     <p><strong>[[post.category]]</strong></p>
@@ -94,20 +88,29 @@
                 post_image: '',
                 category_id: '',
                 categories: '',
-
+                category_sort: '',
             },
             methods: {
                 postIndex: function () {
                     axios({
                         url: "{% url 'landingpageapp:load_posts' %}",
                         method: 'get',
-
+                        params: {
+                            sort: this.category_sort
+                        }
                     }).then(response => {
+                        if (this.category_sort){
+                            this.postIndex = response.data.filter(post => this.category_sort === post.category_id)
+                        }
+                        else {
                         this.posts = response.data.posts
+                        }
                     })
                 },
                 newPost: function (){
                     console.log(this.category_id, 'cat_id')
+                    console.log(this.text, 'text')
+                    console.log(this.title, 'title')
                     let form_data = new FormData()
                     let post_image = document.querySelector('#post_image')
                     form_data.append('post_image', post_image.files[0])
