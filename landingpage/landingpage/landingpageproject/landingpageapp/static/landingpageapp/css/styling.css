@@ -8,3 +8,8 @@ body{
 #holding{
     min-height: 400px;
 }
+#main_image{
+    background-image: url('./images/70310744-handsome-male-manager-with-palms-up-holding-something-invisible-with-copy-text-space.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
