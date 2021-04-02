@@ -45,3 +45,18 @@ def get_categories(request):
         })
     
     return JsonResponse({'categories': category_data})
+
+def filtered_posts(request):
+    code_wars_posts = Post.objects.filter(category='codewars').order_by('-created_date')
+    code_wars_data = []
+    for post in code_wars_posts:
+        code_wars_data.append({
+            'title': post.title,
+            'text': post.text,
+            'id': post.id,
+            'category_id': post.category.id,
+            'category': post.category.name,
+            'post_image': post.post_image.url,
+            'created_date': post.created_date.strftime('%b %d %Y'),
+        })
+    return JsonResponse({'code_wars_posts': code_wars_data})
