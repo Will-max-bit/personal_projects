@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav style="background-color:transparent" class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -31,28 +31,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
@@ -71,19 +50,41 @@
     </div>
   </div>
   <div class="container">
-  <h3>Jujubes toffee lollipop. Wafer marzipan sugar plum.</h3>
-<h6>Caramels carrot cake wafer fruitcake chocolate bar cake lollipop cake sweet. Sesame snaps cheesecake gingerbread toffee. Powder soufflé wafer cotton candy.</h6>
-</div>
-<div class="container-fluid">
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h3 class="text-center">Jujubes toffee lollipop. Wafer marzipan sugar plum.</h3>
+    <hr>
+    <h6 class="text-center">Caramels carrot cake wafer fruitcake chocolate bar cake lollipop cake sweet. Sesame snaps cheesecake gingerbread
+      toffee. Powder soufflé wafer cotton candy.</h6>
+  </div>
+  <div class="d-flex flex-row">
+    <div class="card mx-1" style="width: 18rem;">
+      <img src="{% static 'roseTattoApp/artpf1.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Artist</h6>
+        <p class="card-text">Tart biscuit cotton candy jelly-o sugar plum chocolate bar.</p>
+      </div>
+    </div>
+    <div class="card mx-1" style="width: 18rem;">
+      <img src="{% static 'roseTattoApp/artpf2.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Artist</h6>
+        <p class="card-text">Ice cream halvah apple pie bear claw candy sesame snaps liquorice.</p>
+      </div>
+    </div>
+    <div class="card mx-1" style="width: 18rem;">
+      <img src="{% static 'roseTattoApp/artpf3.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Artist</h6>
+        <p class="card-text">Toffee marzipan jelly beans chocolate bar apple pie liquorice  </p>
+      </div>
+    </div>
+    <div class="card mx-1" style="width: 18rem;">
+      <img src="{% static 'roseTattoApp/artpf4.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title">Artist</h6>
+        <p class="card-text">Cake marshmallow brownie tootsie roll powder. </p>
+      </div>
     </div>
   </div>
-</div>
   <!-- Optional JavaScript; choose one of the two! -->
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
