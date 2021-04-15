@@ -121,5 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DEFAULT_FROM_EMAIL = 'testertesty806@gmail.com '
+DEFAULT_FROM_EMAIL = 'testertesty806@gmail.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

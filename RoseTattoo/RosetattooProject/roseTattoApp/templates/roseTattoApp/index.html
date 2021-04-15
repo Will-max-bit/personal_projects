@@ -154,17 +154,19 @@
             </svg>
             <p class="text-muted text-center">Food truck venmo cray austin tacos fanny pack taiyaki ugh +1. Humblebrag echo park gentrify, kogi taxidermy health goth ramps tumeric sriracha</p>
         </div>
-        <form class="container row g-3 mt-10">
+        <form method="post" class="container row g-3 mt-10">
             <div class="col-auto">
             </div>
             <div class="col-auto">
+                {% csrf_token %}
+                {{ form.as_p }}
               <input type="text" class="form-control" id="inputPassword2" placeholder="email">
             </div>
             <div class="col-auto">
               <button type="submit" class="btn btn-primary mb-3">Sign up</button>
             </div>
           </form>
-          <p class="text-muted text-center">Brunch squid glossier bushwick iPhone narwhal. Tumblr cornhole trust fund literally, man braid pitchfork food truck listicle disrupt hashtag affogato. Letterpress lyft you probably haven't heard of them succulents mlkshk. Waistcoat chicharrones lomo, helvetica offal scenester cornhole synth air plant put a bird on it cronut vaporware taiyaki retro mixtape.</p>
+          <p class="text-muted text-center"><small>Brunch squid glossier bushwick iPhone narwhal. Tumblr cornhole trust fund literally, man braid pitchfork food truck listicle disrupt hashtag affogato. Letterpress lyft you probably haven't heard of them succulents mlkshk. Waistcoat chicharrones lomo, helvetica offal scenester cornhole synth air plant put a bird on it cronut vaporware taiyaki retro mixtape.</small></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
