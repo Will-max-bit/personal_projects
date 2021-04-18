@@ -6,3 +6,6 @@ def index(request):
 
 def artists_page(request):
     return render(request, 'roseTattoApp/artists_page.html')
+
+def artist1(request):
+    return render(request, 'roseTattoApp/artist1.html')

@@ -4,5 +4,6 @@ from . import views
 app_name='roseTattoApp'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('artists_page/', views.artists_page, name='artists_page')
+    path('artists_page/', views.artists_page, name='artists_page'),
+    path('artist1/', views.artist1, name='artist1')
 ]
