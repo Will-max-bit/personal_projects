@@ -9,3 +9,13 @@ def artists_page(request):
 
 def artist1(request):
     return render(request, 'roseTattoApp/artist1.html')
+    
+def artist2(request):
+    return render(request, 'roseTattoApp/artist2.html')
+
+def artist3(request):
+    return render(request, 'roseTattoApp/artist3.html')
+
+def artist4(request):
+    return render(request, 'roseTattoApp/artist4.html')
+
