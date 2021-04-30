@@ -67,12 +67,9 @@
             </div>
         </div>
     </div>
-    <div class="d-flex flex-wrap text-center">
-        <!-- <div class="col"> -->
+    <div class="d-flex flex-wrap text-center" id="app">
             <div class="row">
                 <img src="{% static 'roseTattoApp/int1.jpg'%}" id="img1" onclick="enLargeImg(this)" class="img-thumbnail" style="width: 200px; height: 200px; border:none;" alt="">
-                <!-- <div id="testsDiv" style="display: none;"></div>
-                <button onclick="resetimg"> hide</button> -->
                 <img src="{% static 'roseTattoApp/int3.jpg'%}" class="img-thumbnail" onclick="enLargeImg(this)" style="width: 200px; height: 200px; border:none;" alt="">
                 <img src="{% static 'roseTattoApp/int2.jpg'%}" class="img-thumbnail" onclick="enLargeImg(this)" style="width: 200px; height: 200px; border:none;" alt="">
                 <img src="{% static 'roseTattoApp/int4.jpg'%}" class="img-thumbnail" onclick="enLargeImg(this)" style="width: 200px; height: 200px; border:none;" alt="">
@@ -87,7 +84,7 @@
                 <img src="{% static 'roseTattoApp/int11.jpg'%}" class="img-thumbnail" onclick="enLargeImg(this)" style="width: 200px; height: 200px; border:none;" alt="">
                 <img src="{% static 'roseTattoApp/int12.jpg'%}" class="img-thumbnail" onclick="enLargeImg(this)" style="width: 200px; height: 200px; border:none;" alt="">
             </div>
-        <!-- </div> -->
+            <enlargeable-image src="{% static 'roseTattoApp/thumbnail1.jpg'%}" src="{% static 'roseTattoApp/int1.jpg'%}" />
     </div>
     <footer>
         <div class="row">
@@ -112,7 +109,18 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/@diracleo/vue-enlargeable-image/dist/vue-enlargeable-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        import EnlargeableImage from '@diracleo/vue-enlargeable-image';
+        Vue.use(EnlargeableImage)
+        let app = new Vue({
+            el: '#app',
+            delimiters: ['[[', ']]']
+        })
+    </script>
     <script>
         img = document.getElementById("img1")
         imgthumbnail = document.querySelectorAll('.img-thumbnail')
