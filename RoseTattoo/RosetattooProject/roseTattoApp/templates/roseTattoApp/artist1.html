@@ -69,11 +69,11 @@
     </div>
     <div class="container">
         <div class="row">
-            <button type="button" onclick="resetImg(this)" class="btn btn-light">Close</button>
+            <button type="button" onclick="resetImg('.img-thumbnail')" class="btn btn-light">Close</button>
         </div>
         <hr>
     </div>
-    <div class="d-flex flex-wrap text-center" id="app">
+    <div class="d-flex flex-wrap" id="app">
         <div class="row">
             <img src="{% static 'roseTattoApp/int1.jpg'%}" id="img1" onclick="enLargeImg(this)" class="img-thumbnail"
                 style="width: 200px; height: 200px; border:none;" alt="">
@@ -102,8 +102,6 @@
             <img src="{% static 'roseTattoApp/int12.jpg'%}" class="img-thumbnail" onclick="enLargeImg(this)"
                 style="width: 200px; height: 200px; border:none;" alt="">
         </div>
-        <!-- <enlargeable-image src="{% static 'roseTattoApp/thumbnail1.jpg'%}" src="{% static 'roseTattoApp/int1.jpg'%}">
-            </enlargeable-image> -->
     </div>
     <footer>
         <div class="row">
@@ -119,7 +117,7 @@
             <div class="col-auto">
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control" id="inputPassword2" placeholder="email">
+                <input type="text" class="form-control"  placeholder="email">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Sign up</button>
@@ -138,7 +136,6 @@
     <script>
         img = document.getElementById("img1")
         imgthumbnail = document.querySelectorAll('.img-thumbnail')
-        // closurePics = document.querySelectorAll('.img-thumbnail').addEventListener("click", enLargeImg)
         function enLargeImg(img) {
 
             // imgthumbnail.forEach(img => {
@@ -147,9 +144,12 @@
 
             // });
         }
-        function resetImg(imgthumbnail) {
-            img.style.transform = "scale(1)";
-            img.style.transistion = "transform 0.25s ease"
+        function resetImg() {
+            imgthumbnail.forEach(img => {
+                img.style.transform = "scale(1)";
+                img.style.transistion = "transform 0.25s ease"
+
+            })
         }
 
     </script>
