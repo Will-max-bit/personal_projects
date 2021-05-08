@@ -12,6 +12,13 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <title>Artist1</title>
+    <style>
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -47,14 +54,14 @@
     <img src="{% static 'roseTattoApp/artistbackgroun1.jpg' %}" class="img-fluid mb-1" alt="">
     <div class="container-fluid">
         <div class="row">
-            <div class="col">
+            <div class="col align-self-start">
                 <div class="card mt-10" style="width: 18rem; border:none;">
                     <img src="{% static 'roseTattoApp/artpf1.jpg' %}" class="card-img-top" alt="...">
                 </div>
 
 
             </div>
-            <div class="col">
+            <div class="col align-self-end">
                 <p class="text-center fs-6 ">Dia Moeller, tattooing since 2010. Specializing in color and black and
                     grey realism, with a darker, Victorian, painterly look. Dia creatively combines portraits,
                     botanicals, animals, and the macabre and occult into a truly unique style.</p>
@@ -73,7 +80,7 @@
         </div>
         <hr>
     </div>
-    <div class="d-flex flex-wrap" id="app">
+    <div class="d-flex flex-wrap align-items-center" id="app">
         <div class="row">
             <img src="{% static 'roseTattoApp/int1.jpg'%}" id="img1" onclick="enLargeImg(this)" class="img-thumbnail"
                 style="width: 200px; height: 200px; border:none;" alt="">
@@ -117,7 +124,7 @@
             <div class="col-auto">
             </div>
             <div class="col-auto">
-                <input type="text" class="form-control"  placeholder="email">
+                <input type="text" class="form-control" placeholder="email">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Sign up</button>

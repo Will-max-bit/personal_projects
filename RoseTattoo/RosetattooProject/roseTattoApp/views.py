@@ -19,3 +19,5 @@ def artist3(request):
 def artist4(request):
     return render(request, 'roseTattoApp/artist4.html')
 
+def contact_us(request):
+    return render(request, 'roseTattoApp/contact_us.html')
