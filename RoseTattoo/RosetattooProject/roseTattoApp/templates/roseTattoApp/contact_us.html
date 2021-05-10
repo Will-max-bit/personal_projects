@@ -1,0 +1,118 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dorsa&family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+    <style type="text/css">
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 400px;
+            /* The height is 400 pixels */
+            width: 100%;
+            /* The width is the width of the web page */
+        }
+
+        .main_para {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .warning_txt {
+            font-family: 'Dorsa', sans-serif;
+        }
+    </style>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+            const uluru = { lat: 44.052, lng: -123.086 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'roseTattoApp:index'%}"><img
+                    src="{% static 'roseTattoApp/testing_edited.jpg' %}" width="30" height="30" alt="..."></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="{% url 'roseTattoApp:artists_page'%}">Artists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">General Shop FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Booking</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <img src="{% static 'roseTattoApp/artistbackgroun1.jpg' %}" class="img-fluid mb-1" alt="">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto text-center">
+                <p class="text-center">
+
+                </p>
+                <h4 class="main_para text-center">
+                    To book with an artist, please read our <str><a href="{% url 'roseTattoApp:artists_page'%}"></a>
+                        BOOKING
+                        INFO</str> Thoroughly and contact an artist through the info on their artist page.
+                </h4>
+                <h4 class="main_para text-center">
+                    For general questions about our shop, please read our FAQ page first, and use contact form below to
+                    inquire with the shop if your question is not answered on there.
+                </h4>
+                <p class="warning_txt text-center">
+                    ATTENTION: DUE TO THE LARGE VOLUME OF EMAIL INQUIRIES, WE ARE CURRENTLY UNABLE TO RESPOND TO ANY
+                    EMAIL
+                    QUESTIONS THAT ARE ANSWERED ON OUR FAQ or BOOKING INFO PAGE. IF YOU SEND QUESTIONS/INQUIRIES
+                    ANSWERED ON
+                    EITHER PAGE, YOU WILL NOT RECEIVE A REPLY.
+                </p>
+                <!-- <div class="d-flex align-items-center"> -->
+                <a href="mailto:something@something.com"><button type="button" class="btn btn-dark"> email the
+                        shop</button></a>
+            </div> <!-- </div> -->
+        </div>
+    </div>
+    <div id="map"></div>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap&libraries=&v=weekly"
+        async></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
