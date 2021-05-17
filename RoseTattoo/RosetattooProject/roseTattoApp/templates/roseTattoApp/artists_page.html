@@ -21,8 +21,11 @@
         body{
             background-color: rgb(75, 74, 74);
         }
-        p, li, h4, h1{
+        p, li, h4, h1, h3, h6{
             color: white;
+        }
+        .card-body{
+          background-color: #a1a1a1;
         }
         
   </style>
@@ -76,28 +79,28 @@
       toffee. Powder soufflé wafer cotton candy.</h6>
   </div>
   <div class="d-flex flex-row">
-    <div class="card mx-1" style="width: 18rem; border:none;">
+    <div class="card mx-1 my-1" style="width: 18rem; border:none;">
       <img src="{% static 'roseTattoApp/artpf1.jpg' %}" class="card-img-top" alt="...">
       <div class="card-body">
         <h6 class="card-title" ><a href="{% url 'roseTattoApp:artist1'%}"> Artist</a></h6>
         <p class="card-text"><small>Tart biscuit cotton candy jelly-o sugar plum chocolate bar.</small></p>
       </div>
     </div>
-    <div class="card mx-1" style="width: 18rem; border:none;">
+    <div class="card mx-1 my-1" style="width: 18rem; border:none;">
       <img src="{% static 'roseTattoApp/artpf2.jpg' %}" class="card-img-top" alt="...">
       <div class="card-body">
         <h6 class="card-title"><a href="{% url 'roseTattoApp:artist1'%}">Artist</a></h6>
         <p class="card-text"><small>Ice cream halvah apple pie bear claw candy sesame snaps liquorice.</small></p>
       </div>
     </div>
-    <div class="card mx-1" style="width: 18rem; border:none;">
+    <div class="card mx-1 my-1" style="width: 18rem; border:none;">
       <img src="{% static 'roseTattoApp/artpf3.jpg' %}" class="card-img-top" alt="...">
       <div class="card-body">
         <h6 class="card-title"><a href="{% url 'roseTattoApp:artist1'%}">Artist</a></h6>
         <p class="card-text"><small>Toffee marzipan jelly beans chocolate bar apple pie liquorice  </small></p>
       </div>
     </div>
-    <div class="card mx-1" style="width: 18rem; border:none;">
+    <div class="card mx-1 my-1" style="width: 18rem; border:none;">
       <img src="{% static 'roseTattoApp/artpf4.jpg' %}" class="card-img-top" alt="...">
       <div class="card-body">
         <h6 class="card-title"><a href="{% url 'roseTattoApp:artist1'%}">Artist</a></h6>
