@@ -14,8 +14,8 @@
 
     <title>Home page</title>
     <style>
-        footer{
-            background-color: #a1a1a1;
+        #foot{
+            /* background-color: #383838; */
             color: #c7ceda;
             border: black;
         }
@@ -25,6 +25,9 @@
         p, li, h4, h1{
             color: white;
         }
+        .card-text{
+            color: black;
+        }
         
     </style>
 </head>
@@ -32,9 +35,9 @@
 <body>
     <header>
         
-        <nav style="transition: top 0.3s;" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <nav style="transition: top 0.3s;" class="navbar navbar-expand-lg navbar-light bg-transparent sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'roseTattoApp:index'%}"><img
+                <a class="navbar-brand navbar" href="{% url 'roseTattoApp:index'%}"><img
                         src="{% static 'roseTattoApp/logo.jpg' %}" width="30" height="30" alt="..."></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -110,7 +113,7 @@
     <div class="container">
         <div class="row">
             <div class="d-flex justify-content-evenly">
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 40%; ">
                     <img src="{%static 'roseTattoApp/card1.jpg'%}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">About Us</h5>
@@ -118,14 +121,14 @@
                             of single-origin coffee poke.</p>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 40%;">
                     <img src="{%static 'roseTattoApp/card2.jpg'%}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Our Shop</h5>
                         <p class="card-text">Vape marfa taiyaki fingerstache twee pug pabst. </p>
                     </div>
                 </div>
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 40%;">
                     <img src="{%static 'roseTattoApp/card3.jpg'%}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Our Values</h5>
@@ -137,7 +140,8 @@
         </div>
     </div>
     <hr>
-    <footer class="container">
+    <hr>
+    <footer class="container" id="foot">
         <div class="row justify-content-md-center">
             <div class="col-md-auto text-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
