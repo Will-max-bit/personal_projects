@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'roseTattoApp/css/styling.css'%}">
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fira+Mono&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -28,7 +29,13 @@
         .card-text{
             color: black;
         }
-        
+        #mainview{
+
+            box-shadow: 0 -8px 6px -6px black;
+        }
+        #first_para{
+            font-family: 'Dancing Script', cursive;
+        }
     </style>
 </head>
 
@@ -50,10 +57,10 @@
                             <a class="nav-link active" aria-current="page"
                                 href="{% url 'roseTattoApp:artists_page'%}">Artists</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="nav-link" href="#">General Shop FAQs</a>
                             
-                        </li>
+                        </li> -->
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'roseTattoApp:contact_us'%}">Contact us</a>
                         </li>
@@ -82,20 +89,47 @@
     </div>
     <hr>
     <div class="container mt-100">
-        <p class="text-uppercase text-center">Semiotics biodiesel PBR&B crucifix chia bushwick ennui polaroid. Air plant
+        <p class=" text-center" id="first_para">Semiotics biodiesel PBR&B crucifix chia bushwick ennui polaroid. Air plant
             tofu beard fam. Hammock
             microdosing YOLO VHS meggings, venmo whatever kinfolk lumbersexual semiotics trust fund hella kale chips
             polaroid echo park. Asymmetrical cray ethical, man bun sriracha gluten-free stumptown gastropub. Chambray
             trust fund banh mi lumbersexual, brunch four dollar toast polaroid hammock chicharrones enamel pin activated
             charcoal retro. Hammock taxidermy irony tacos YOLO 90's +1 chambray la croix lo-fi coloring book raclette
             vape</p>
-        <p class="font-italic text-center">Pinterest live-edge irony pug four dollar toast. Sustainable drinking vinegar
+        <p class="font-italic text-center" id="first_para">Pinterest live-edge irony pug four dollar toast. Sustainable drinking vinegar
             +1 single-origin coffee ugh everyday carry humblebrag selfies asymmetrical irony chia stumptown try-hard
             biodiesel tumeric. Echo park selvage godard hell of asymmetrical kitsch unicorn banh mi kogi sriracha.
             Iceland snackwave meh marfa keytar jianbing blue</p>
-        <p class="text-muted text-center">To book with an artist, please read the booking info page and email an artist
+        <p class="text-muted text-center">To book with an artist, please read the booking info page<button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    here
+  </button> and email an artist
             directly for all tattoo inquiries. </p>
     </div>
+    <!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">booking info</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Due to the custom nature of our shop, we do not have an admin or office manager who books appointments. Each artist accepts work at different volumes. While some take emails year round, several of our artists only open their books to requests for work in a specific time window every few months, in order to condense their correspondence times. Each artist has details of how they accept inquiries on their artist page. 
+
+            If the artist’s page that you are interested in says “books are closed”, that means that you cannot request an appointment now, and will have to wait for the next time window when that artist is booking. If you are interested in an artist whose books are currently closed, we recommend following them on social media through the links on their artist page to be notified exactly when their books open. 
+            
+            Our artists schedule their own consultations and appointments personally, so contacting them as is outlined on their artist’s page is the only way they can be reached. If you are not particular about which tattoo artist does your work, and do not want to wait for our artist’s books to open, we suggest visiting any of the other tattoo shops in the area, as nearly all of them take walk-ins and are of good quality.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
     <hr>
     <div class="container-fluid">
         <h1><strong>News</strong></h1>
