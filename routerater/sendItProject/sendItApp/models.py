@@ -30,3 +30,10 @@ class UserFollowing(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['user_id', 'following_user_id'], name="unique_followers")
         ]
+        ordering = ['-created']
+    def __str__(self) -> str:
+        f"{self.user_id} follows {self.following_user_id}"
+
+class Rating(models.Model):
+    rating = models.CharField(max_length=4)
+    type = models.CharField(max_length=10)

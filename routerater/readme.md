@@ -35,6 +35,8 @@ a social media app centered around routes at gyms, they're ratings, how many hav
     * post_image(imagefield)
     * author (foreign key to the user)
     * likes( many to many field)
+    * title( charfield)
+    * created date (datetimefield)
 * Rating 
     * rating(charfield)
     * type(charfield)
