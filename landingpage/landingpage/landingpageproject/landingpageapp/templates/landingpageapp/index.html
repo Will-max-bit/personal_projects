@@ -16,6 +16,7 @@
 
 <body>
     <div id="app">
+        {% if user.is_authenticated %}
         <ul class="nav justify-content-end sticky-top mt-1">
             <li class="nav-item" v-for="category in categories">
                 <a class="nav-link active" v-on:click="postIndex" aria-current="page" v-bind:value="category.id"
@@ -27,8 +28,11 @@
                 </button>
             </li>
         </ul>
-        <div id="main_image">
+        {% endif %}
 
+        <div class="mb-100">
+            <H4>Hi I'm Will</H4>
+            <p><strong>I'm a web developer, let me show you how I can help you</strong></p>
         </div>
         <div class="container">
 
@@ -62,8 +66,14 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-">
+
+
+
+
+
+
+            <div class="row" id="cards">
+
                 <div class="card mt-1" v-for="post in posts">
                     <div class="card-body">
                         <h5 class="card-title">[[post.title]]</h5>
@@ -74,8 +84,13 @@
                     </div>
                     <img v-bind:src="post.post_image" class="card-img-bottom" alt="...">
                 </div>
+
             </div>
-            </div>
+            <hr>
+
+
+
+            <hr>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
