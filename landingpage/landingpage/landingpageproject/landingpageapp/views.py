@@ -1,12 +1,18 @@
+# from landingpage.landingpageproject import landingpageapp
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from .models import Post, Category
 from datetime import datetime
 from django.utils.timezone import get_current_timezone
 
+def home_page(request):
+    return render(request, 'landingpageapp/home_page.html')
+
 def index(request):
     return render(request, 'landingpageapp/index.html')
-
+def coding_challenges(request):
+    return render(request, 'landingpageapp/coding_challenges.html')
+    
 def load_posts(request):
     posts = Post.objects.all().order_by('-created_date')
     post_data = []
