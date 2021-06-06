@@ -4,6 +4,8 @@ from django.http import HttpResponse, JsonResponse
 from .models import Post, Category
 from datetime import datetime
 from django.utils.timezone import get_current_timezone
+import json
+import requests
 
 def home_page(request):
     return render(request, 'landingpageapp/home_page.html')
@@ -66,3 +68,12 @@ def filtered_posts(request):
             'created_date': post.created_date.strftime('%b %d %Y'),
         })
     return JsonResponse({'code_wars_posts': code_wars_data})
+
+def code_wars_api(request):
+    response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
+    response_data = response.json()
+    code_warsdata = []
+    for challenge in response_data:
+        code_wars_api.append({
+            
+        })
