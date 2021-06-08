@@ -1,7 +1,7 @@
 # from landingpage.landingpageproject import landingpageapp
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import Post, Category
+from .models import CodeWars, Post, Category
 from datetime import datetime
 from django.utils.timezone import get_current_timezone
 import json
@@ -69,11 +69,16 @@ def filtered_posts(request):
         })
     return JsonResponse({'code_wars_posts': code_wars_data})
 
-def code_wars_api(request):
-    response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
-    response_data = response.json()
-    code_warsdata = []
-    for challenge in response_data:
-        code_wars_api.append({
-            
+def code_wars(request):
+    code_warsposts = CodeWars.objects.all().order_by('created_date')
+    code_wars_data = []
+    for code in code_warsposts:
+        code_wars_data({
+        'title': code.title,
+        'code_image':code.code_image.url,
+        # 'completed_date':code.completed_date,
+        'rank': code.rank,
+        'language_id': code.language.id,
+        'language_name': code.language.name
         })
+    return JsonResponse({'codewars_posts': code_wars_data})

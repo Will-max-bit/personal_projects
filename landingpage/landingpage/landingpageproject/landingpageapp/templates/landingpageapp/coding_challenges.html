@@ -31,20 +31,22 @@
       el: '#app',
       delimiters: ['[[', ']]'],
       data: {
+        posts: [],
 
       },
       methods: {
-        code_wars: function () {
+        CodeWars: function () {
           axios({
+            url: "{% url 'landingpageapp:code_wars'%}",
             method: 'get',
-            url: 'http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0'
           }).then(response => {
             console.log(response.data)
           })
-        }
+        },
+
       },
       created: function(){
-        this.code_wars()
+        this.CodeWars()
       }
     })
   </script>

@@ -9,5 +9,6 @@ urlpatterns = [
     path('new_post', views.new_post, name='new_post'),
     path('get_categories', views.get_categories, name='get_categories'),
     path('filtered_posts', views.filtered_posts, name='filtered_posts'),
-    path('coding_challenges/', views.coding_challenges, name='coding_challenges')
+    path('coding_challenges/', views.coding_challenges, name='coding_challenges'),
+    path('code_wars', views.code_wars, name='code_wars')
 ]
