@@ -16,9 +16,44 @@
 <body>
   <div class="sticky-md-top">
     <img src="https://www.codewars.com/users/Will-max-bit/badges/large">
+    <div class="row">
+      <div class="col">
+        Date completed
+      </div>
+      <div class="col">
+        Challenge title
+      </div>
+      <div class="col">
+        Challenge Rank
+      </div>
+      <div class="col">
+        Completed Challenge
+      </div>
+      <div class="col">
+        Language
+      </div>
+      <hr>
+    </div>
   </div>
   <div id="app">
-
+    <div class="row" v-for="code in posts">
+      <div class="col">
+        [[code.completed_date]]
+      </div>
+      <div class="col">
+        [[code.title]]
+      </div>
+      <div class="col">
+        [[code.rank]]
+      </div>
+      <div class="col">
+        <img class=".img-thumbnail" v-bind:src="code.code_image" style="width: 60%; border:none;height: 60%;" alt="">
+      </div>
+      <div class="col">
+        [[code.language_name]]
+        <img v-bind:src="code.language_logo" style="width: 60%; border:none;height: 60%;" alt="">
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -40,12 +75,13 @@
             url: "{% url 'landingpageapp:code_wars'%}",
             method: 'get',
           }).then(response => {
+            this.posts = response.data.codewars_posts
             console.log(response.data)
           })
         },
 
       },
-      created: function(){
+      created: function () {
         this.CodeWars()
       }
     })
