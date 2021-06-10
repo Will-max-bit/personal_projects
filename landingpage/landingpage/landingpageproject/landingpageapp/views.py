@@ -12,9 +12,13 @@ def home_page(request):
 
 def index(request):
     return render(request, 'landingpageapp/index.html')
+
 def coding_challenges(request):
     return render(request, 'landingpageapp/coding_challenges.html')
-    
+
+def projects(request):
+    return render(request, 'landingpageapp/projects.html')
+
 def load_posts(request):
     posts = Post.objects.all().order_by('-created_date')
     post_data = []
@@ -55,7 +59,7 @@ def get_categories(request):
     return JsonResponse({'categories': category_data})
 
 def filtered_posts(request):
-    code_wars_posts = Post.objects.filter(category='codewars').order_by('-created_date')
+    code_wars_posts = Post.objects.filter(category='codewars').order_by('created_date')
     code_wars_data = []
     for post in code_wars_posts:
         code_wars_data.append({
@@ -70,15 +74,16 @@ def filtered_posts(request):
     return JsonResponse({'code_wars_posts': code_wars_data})
 
 def code_wars(request):
-    code_warsposts = CodeWars.objects.all().order_by('created_date')
+    code_warsposts = CodeWars.objects.all().order_by('completed_date')
     code_wars_data = []
     for code in code_warsposts:
-        code_wars_data({
+        code_wars_data.append({
         'title': code.title,
         'code_image':code.code_image.url,
-        # 'completed_date':code.completed_date,
+        'completed_date':code.completed_date.strftime('%b %d %Y'),
         'rank': code.rank,
         'language_id': code.language.id,
-        'language_name': code.language.name
+        'language_name': code.language.language_name,
+        'language_logo': code.language.language_logo.url
         })
     return JsonResponse({'codewars_posts': code_wars_data})
