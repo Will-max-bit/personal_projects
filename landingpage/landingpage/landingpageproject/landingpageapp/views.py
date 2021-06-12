@@ -1,7 +1,7 @@
 # from landingpage.landingpageproject import landingpageapp
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
-from .models import CodeWars, Post, Category
+from .models import CodeWars, Post, Category, Projects_pictures
 from datetime import datetime
 from django.utils.timezone import get_current_timezone
 import json
@@ -87,3 +87,13 @@ def code_wars(request):
         'language_logo': code.language.language_logo.url
         })
     return JsonResponse({'codewars_posts': code_wars_data})
+
+def project_pictures(request):
+    project_pictures_posts = Projects_pictures.objects.all()
+    project_pictures_data = []
+    for picture in project_pictures_posts:
+        project_pictures_data.append({
+            'title': picture.title,
+            'project_image': picture.project_image.url,
+        })
+    return JsonResponse({'project_pictures': project_pictures_data})

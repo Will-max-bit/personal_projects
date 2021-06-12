@@ -37,7 +37,7 @@ class CodeWars(models.Model):
     def __str__(self):
         return self.title + self.rank
 
-class projects_video(models.Model):
+class Projects_video(models.Model):
     title = models.CharField(max_length=50)
     video = models.FileField(upload_to='videos/')
 
@@ -48,6 +48,9 @@ class projects_video(models.Model):
     def __str__(self):
         return self.title
 
-class projects_pictures(models.Model):
+class Projects_pictures(models.Model):
     title = models.CharField(max_length=30)
     project_image = models.ImageField(upload_to='post_images/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title

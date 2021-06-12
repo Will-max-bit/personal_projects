@@ -27,6 +27,19 @@
       delimiters: ['[[', ']]'],
       data: {
         projects: [],
+      },
+      methods: {
+        ProjectPictures: function () {
+          axios({
+            url: "{% url 'landingpageapp:project_pictures'%}",
+            method: 'get',
+          }).then(response => {
+            console.log(response.data)
+          })
+        }
+      },
+      created: function (){
+        this.ProjectPictures()
       }
     })
   </script>  
