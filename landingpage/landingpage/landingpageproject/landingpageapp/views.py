@@ -6,6 +6,8 @@ from datetime import datetime
 from django.utils.timezone import get_current_timezone
 import json
 import requests
+from django.views.generic.base import TemplateView
+
 
 def home_page(request):
     return render(request, 'landingpageapp/home_page.html')
@@ -18,6 +20,15 @@ def coding_challenges(request):
 
 def projects(request):
     return render(request, 'landingpageapp/projects.html')
+
+def rose_tat(request):
+    return render(request, 'landingpageapp/rose_tattoo.html')
+
+def poke(request):
+    return render(request, 'landingpageapp/poke_app.html')
+
+def climb(request):
+    return render(request, 'landingpageapp/climb_up.html')
 
 def load_posts(request):
     posts = Post.objects.all().order_by('-created_date')
@@ -97,3 +108,4 @@ def project_pictures(request):
             'project_image': picture.project_image.url,
         })
     return JsonResponse({'project_pictures': project_pictures_data})
+
