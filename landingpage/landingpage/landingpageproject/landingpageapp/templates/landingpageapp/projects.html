@@ -11,7 +11,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-  <title>Hello, world!</title>
+  <title>Projects</title>
+  <style>
+    .rainbow-text {
+    background-image: linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  </style>
+  
 </head>
 
 <body>
@@ -34,7 +42,7 @@
       <div class="carousel-inner">
         <div class="carousel-item" v-for='(project, index) in projects' :class="{active: index==0}">
           <img v-bind:src="[[project.project_image]]" class="d-block w-100" alt="..."
-            style="max-height: 50% !important;">
+            style="max-height: 700px !important; min-height: 600px !important;">
           <div class="carousel-caption d-none d-md-block">
             <h5>[[project.title]]</h5>
             <p> the first slide.</p>
@@ -49,64 +57,74 @@
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
+
     </button>
-    <!-- modal starts here -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Launch demo modal
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-fullscreen-lg-down">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="stick-top fluid d-flex justify-content-between">
-              <div class="d-flex justify-content-start">
-                  <a href="#" class="mx-3" style="text-decoration: none;">About</a>
-                  <a href="#" class="mx-3" style="text-decoration: none;">Store</a>
-              </div>
-              <div class="d-flex justify-content-end">
-                  <a href="#" style="text-decoration: none;">Mmail</a>
-                  <button type="button" class="btn btn-outline btn-sm mx-3">≡</button>
-                  <a href="#" id="m-link" style="text-decoration: none;" class="mx-2">M</a>
-              </div>
+    <hr>
+    <hr>
+    <h1>Front end only clones</h1>
+  </div>
+  <!-- modal starts here -->
+  <div class="container">
+    <div class="row" >
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+          test </button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            test </button>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Google Clone</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="stick-top fluid d-flex justify-content-between">
+            <div class="d-flex justify-content-start">
+              <a href="#" class="mx-3" style="text-decoration: none;">About</a>
+              <a href="#" class="mx-3" style="text-decoration: none;">Store</a>
+            </div>
+            <div class="d-flex justify-content-end">
+              <a href="#" style="text-decoration: none;">Mmail</a>
+              <button type="button" class="btn btn-outline btn-sm mx-3">≡</button>
+              <a href="#" id="m-link" style="text-decoration: none;" class="mx-2">M</a>
+            </div>
           </div>
           <div class="container" id="box">
-              <div class="row align-items-center">
-                  <h1 class="text-center rainbow-text">MOOGLE</h1>
-                  <div class="col align-self-center" style="height:max-content">
-                      <input type="text" id="search_box" class="form-control" placeholder="">
-                      <div class="d-flex justify-content-between mt-1">
-                          <button type="button" class="btn btn-outline-secondary btn-sm">Moogle Search</button>
-                          <button type="button" class="btn btn-outline-secondary btn-sm">Feeling lucky</button>
-                      </div>
-                  </div>
+            <div class="row align-items-center">
+              <h1 class="text-center rainbow-text">MOOGLE</h1>
+              <div class="col align-self-center" style="height:max-content">
+                <input type="text" id="search_box" class="form-control" placeholder="">
+                <div class="d-flex justify-content-between mt-1">
+                  <button type="button" class="btn btn-outline-secondary btn-sm">Moogle Search</button>
+                  <button type="button" class="btn btn-outline-secondary btn-sm">Feeling lucky</button>
+                </div>
               </div>
-      
-      
-      
-              <footer class="fixed-bottom d-flex justify-content-between" id="footer">
-                  <a href="#" class="mx-1" style="text-decoration: none;">Advertising</a>
-                  <a href="#" style="text-decoration: none;">Business</a>
-                  <a href="#" style="text-decoration: none;">How Moogle Works</a>
-                  <a href="#" style="text-decoration: none;">Privacy</a>
-                  <a href="#" style="text-decoration: none;">Terms</a>
-                  <a href="#" class="mx-1" style="text-decoration: none;">Settings</a>
-              </footer>
+            </div>
+
+
+
+            <footer class="fixed-bottom d-flex justify-content-between" id="footer">
+              <a href="#" class="mx-1" style="text-decoration: none;">Advertising</a>
+              <a href="#" style="text-decoration: none;">Business</a>
+              <a href="#" style="text-decoration: none;">How Moogle Works</a>
+              <a href="#" style="text-decoration: none;">Privacy</a>
+              <a href="#" style="text-decoration: none;">Terms</a>
+              <a href="#" class="mx-1" style="text-decoration: none;">Settings</a>
+            </footer>
           </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+        </div>
+        <hr>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
-  
+  </div>
+
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
