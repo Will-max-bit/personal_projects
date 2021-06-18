@@ -63,6 +63,7 @@
     <hr>
     <h1>Front end only clones</h1>
   </div>
+
   <!-- modal starts here -->
   <div class="container">
     <div class="row" >
@@ -137,6 +138,7 @@
       delimiters: ['[[', ']]'],
       data: {
         projects: [],
+        links: ['http://127.0.0.1:8000/climb_up/', ]
       },
       methods: {
         ProjectPictures: function () {
@@ -147,6 +149,9 @@
             this.projects = response.data.project_pictures
             console.log(response.data)
           })
+        },
+        linkLoop: function (){
+
         }
       },
       created: function () {
