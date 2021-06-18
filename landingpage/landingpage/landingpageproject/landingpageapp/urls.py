@@ -12,5 +12,7 @@ urlpatterns = [
     path('coding_challenges/', views.coding_challenges, name='coding_challenges'),
     path('code_wars', views.code_wars, name='code_wars'),
     path('projects/', views.projects, name='projects'),
-    path('project_pictures', views.project_pictures, name='project_pictures')
+    path('project_pictures', views.project_pictures, name='project_pictures'),
+    path('rose_tattoo/', views.rose_tat, name='rose_tat'),
+    path('climb_up/', views.climb_up, name='climb_up')
 ]

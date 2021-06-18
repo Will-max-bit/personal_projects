@@ -9,6 +9,7 @@ import requests
 from django.views.generic.base import TemplateView
 
 
+
 def home_page(request):
     return render(request, 'landingpageapp/home_page.html')
 
@@ -27,7 +28,7 @@ def rose_tat(request):
 def poke(request):
     return render(request, 'landingpageapp/poke_app.html')
 
-def climb(request):
+def climb_up(request):
     return render(request, 'landingpageapp/climb_up.html')
 
 def load_posts(request):
@@ -109,3 +110,5 @@ def project_pictures(request):
         })
     return JsonResponse({'project_pictures': project_pictures_data})
 
+def page_bts(request):
+    pass
