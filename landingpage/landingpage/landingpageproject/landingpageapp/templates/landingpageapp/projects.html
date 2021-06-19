@@ -14,12 +14,12 @@
   <title>Projects</title>
   <style>
     .rainbow-text {
-    background-image: linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange, red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+      background-image: linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange, red);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   </style>
-  
+
 </head>
 
 <body>
@@ -45,34 +45,45 @@
             style="max-height: 700px !important; min-height: 600px !important;">
           <div class="carousel-caption d-none d-md-block">
             <h5>[[project.title]]</h5>
-            <p> the first slide.</p>
+            <p v-for="link in links"></p>
+            <a href="[[link.addy[0]]]">go here</a>
           </div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+      <span class="visually-hidden">Next</span> -->
 
     </button>
     <hr>
     <hr>
-    <h1>Front end only clones</h1>
+    <div class="container">
+<h1 class="text-center">Front end only clones</h1>
+    </div>
+    
+    
   </div>
 
   <!-- modal starts here -->
   <div class="container">
-    <div class="row" >
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-          test </button>
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            test </button>
+    <div class="row justify-content-center">
+      <div class="col">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+        test </button>
+      </div>
+      <div class="col">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+        test </button>
+      </div>
+      
     </div>
   </div>
+
   <!-- Modal -->
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
@@ -125,40 +136,274 @@
       </div>
     </div>
   </div>
+  <!-- second modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
 
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"></script>
-  <script>
-    let app = new Vue({
-      el: '#app',
-      delimiters: ['[[', ']]'],
-      data: {
-        projects: [],
-        links: ['http://127.0.0.1:8000/climb_up/', ]
-      },
-      methods: {
-        ProjectPictures: function () {
-          axios({
-            url: "{% url 'landingpageapp:project_pictures'%}",
-            method: 'get',
-          }).then(response => {
-            this.projects = response.data.project_pictures
-            console.log(response.data)
-          })
+          <body id="background_image">
+            <nav class="navbar navbar-light bg-light sticky-top mt-0">
+              <div id="top_bar" class="container-fluid justify-content-space-around">
+                <!-- <button class="btn btn-outline-success me-2" type="button">Main button</button> -->
+                <a href="#" style="text-decoration: none;" type="button">
+                  <h1>ClimbUp</h1>
+                </a>
+
+                <a class="btn btn-sm btn-outline-secondary" href="#" type="button">Profile</a>
+                <a class="btn btn-sm btn-outline-danger" href="#" type="button">Log out</a>
+
+                <a class="btn btn-sm btn-outline-success" href="#" type="button">Register</a>
+                <a class="btn btn-sm btn-outline-primary" href="#" type="button">log in</a>
+
+                <h4>Welcome - Example_User</h4>
+              </div>
+            </nav>
+            <div id="app" class="container ">
+              <!-- add city modal  -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> modal starts here
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel"><i class="bi bi-building">Enter a city</i></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="">
+                        <textarea class="form-control" id="city_add" rows="3"></textarea>
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Add
+                          city</button>
+                      </form>
+                    </div>
+                    <div class="modal-footer"></div>
+                  </div>
+                </div>
+              </div>
+              <!-- new post form -->
+              <div class="col" id="new_post">
+                <div class="form-group">
+                  <label for="new_post_form"></label>
+                  <input type="title" class="form-control" id="new_post_form" placeholder="What's happening?">
+                </div>
+                <textarea class="form-control" v-model="text" id="FormControlTextarea1" rows="3"></textarea>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm ">
+                  <option value="" disabled selected>Select a City</option>
+                  <option placeholder="What's happening?">[[city.name]]</option>
+                </select>
+                <input class="form-control form-control-sm" id="post_image" type="file" accept="image/*" />
+                <input type="datetime-local" class="form-control" id="scheduled_date">
+                <div class="d-flex justify-content-evenly" id="new_postbtns">
+                  <button type="button" class="btn btn-primary">Send it</button>
+                  <!-- button triggers add city modal to open -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    Add a City
+                  </button>
+                </div>
+                <div class=" container row mt-1">
+                  <!-- select dropdown for selecting a city to assign to the post -->
+                  <select class="form-select form-select-sm" v-model="city_sort" aria-label=".form-select-sm ">
+                    <option value="" disabled selected>Select a City</option>
+                    <option v-for="city in cities" v-bind:value="city.id">Example City</option>
+                    <option v-for="city in cities" v-bind:value="city.id">Example City</option>
+                  </select>
+                  <button type="button" v-on:click="postIndex" class="btn btn-light ">sort by city</button>
+                </div>
+              </div>
+              <!-- main post bodies start here -->
+              <div class="container m-o mt-1" id="card" data-aos="fade-up" data-aos-duration="3000"
+                v-for="post in vue_posts" style="width: 100%;">
+                <img src="{% static 'landingpageapp/9.jpg'%}" class="card-img-top mt-1" alt="...">
+                <div class="card-body">
+                  <div>Author- exampleAuthor</div>
+                  <div>Location- exampleCity</div>
+                  <div>posted- exampleCreated_date</div>
+                  <div>scheduled- exampleScheduled_date</div>
+                  <hr>
+                  <h5 class="card-title">exampleTitle</h5>
+                  <p class="card-text">
+                    Viral godard paleo meh subway tile woke sartorial fixie. Tote bag sustainable hoodie letterpress
+                    twee, marfa cronut offal gastropub iceland 8-bit ennui semiotics taiyaki. PBR&B hashtag stumptown
+                    squid. Chicharrones edison bulb everyday carry, retro quinoa whatever crucifix salvia poke
+                    dreamcatcher.
+                  </p>
+                  <hr>
+                  <!-- checking if the user is authenticated before allowing liking and attending -->
+                  <div class="d-flex justify-content-evenly">
+                    <!-- button prompts modal to open for commenting -->
+                    <button type="button" class="btn btn-primary" v-on:click="commented_post_id = post.id"
+                      data-bs-toggle="modal" data-bs-target="#Modalcomment">
+                      Add a comment
+                    </button>
+                    <button type='button' class="btn btn-floating mb-1" data-mdb-ripple-color="dark"
+                      v-on:click="likePost(post)">'👎': '👍' </button>
+                    <button type='button' class='btn btn-floatin mb-1' data-mdb-ripple-color='dark'
+                      v-on:click="Attending(post)">🧗</button>
+                  </div>
+                  <!-- displaying the posts comments and likes -->
+                  <div class="card-text d-flex justify-content-evenly">
+                    <div>comments</div>
+                    <div>Likes-example2</div>
+                    <div>attendants-exampleAttendent</div>
+                  </div>
+                  <hr>
+                  <!-- single accordian for the posts comments -->
+                  <div class="accordion accordion-flush" id="accordionFlush">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Comments
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlush">
+                        <div class="accordion-body" v-for="(comment, index) in comments" v-if="comment.post == post.id">
+                          <h1>exampleAuthor</h1>
+                          <p>
+                            Gluten-free echo park XOXO, banh mi cloud bread helvetica whatever single-origin coffee
+                            normcore jianbing kickstarter 8-bit tousled craft beer.
+                          </p>
+                          <hr>
+                          <h1>exampleAuthor</h1>
+                          <p>
+                            XOXO artisan plaid vinyl put a bird on it tacos, leggings fingerstache keytar tote bag
+                            kickstarter slow-carb. YOLO synth cronut scenester. VHS pop-up blog mustache kitsch.
+                          </p>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container m-o mt-1" id="card" data-aos="fade-up" data-aos-duration="3000"
+                v-for="post in vue_posts" style="width: 100%;">
+                <img src="{% static 'landingpageapp/5.jpg'%}" class="card-img-top mt-1" alt="...">
+                <div class="card-body">
+                  <div>Author- exampleAuthor</div>
+                  <div>Location- exampleCity</div>
+                  <div>posted- exampleCreated_date</div>
+                  <div>scheduled- exampleScheduled_date</div>
+                  <hr>
+                  <h5 class="card-title">exampleTitle</h5>
+                  <p class="card-text">
+                    Viral godard paleo meh subway tile woke sartorial fixie. Tote bag sustainable hoodie letterpress
+                    twee, marfa cronut offal gastropub iceland 8-bit ennui semiotics taiyaki. PBR&B hashtag stumptown
+                    squid. Chicharrones edison bulb everyday carry, retro quinoa whatever crucifix salvia poke
+                    dreamcatcher.
+                  </p>
+                  <hr>
+                  <!-- checking if the user is authenticated before allowing liking and attending -->
+                  <div class="d-flex justify-content-evenly">
+                    <!-- button prompts modal to open for commenting -->
+                    <button type="button" class="btn btn-primary" v-on:click="commented_post_id = post.id"
+                      data-bs-toggle="modal" data-bs-target="#Modalcomment">
+                      Add a comment
+                    </button>
+                    <button type='button' class="btn btn-floating mb-1" data-mdb-ripple-color="dark"
+                      v-on:click="likePost(post)">'👎': '👍' </button>
+                    <button type='button' class='btn btn-floatin mb-1' data-mdb-ripple-color='dark'
+                      v-on:click="Attending(post)">🧗</button>
+                  </div>
+                  <!-- displaying the posts comments and likes -->
+                  <div class="card-text d-flex justify-content-evenly">
+                    <div>comments</div>
+                    <div>Likes-example2</div>
+                    <div>attendants-exampleAttendent</div>
+                  </div>
+                  <hr>
+                  <!-- single accordian for the posts comments -->
+                  <div class="accordion accordion-flush" id="accordionFlush">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          Comments
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlush">
+                        <div class="accordion-body" v-for="(comment, index) in comments" v-if="comment.post == post.id">
+                          <h1>exampleAuthor</h1>
+                          <p>
+                            Gluten-free echo park XOXO, banh mi cloud bread helvetica whatever single-origin coffee
+                            normcore jianbing kickstarter 8-bit tousled craft beer.
+                          </p>
+                          <hr>
+                          <h1>exampleAuthor</h1>
+                          <p>
+                            XOXO artisan plaid vinyl put a bird on it tacos, leggings fingerstache keytar tote bag
+                            kickstarter slow-carb. YOLO synth cronut scenester. VHS pop-up blog mustache kitsch.
+                          </p>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- modal for commenting -->
+              <div class="modal fade" id="Modalcomment" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="ModalLabel">Comment</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <textarea class="form-control" v-model="body" id="add_comment" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" v-on:click="vueSaveComment" data-bs-dismiss="modal"
+                        class="btn btn-primary">Save comment</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
+    <script>
+      let app = new Vue({
+        el: '#app',
+        delimiters: ['[[', ']]'],
+        data: {
+          projects: [],
+          links: [
+            { addy: 'http://127.0.0.1:8000/climb_up/' },
+            { addy: 'http://127.0.0.1:8000/rose_tat/' }]
         },
-        linkLoop: function (){
-
+        methods: {
+          ProjectPictures: function () {
+            axios({
+              url: "{% url 'landingpageapp:project_pictures'%}",
+              method: 'get',
+            }).then(response => {
+              this.projects = response.data.project_pictures
+              console.log(response.data)
+            })
+          },
+        },
+        created: function () {
+          this.ProjectPictures()
         }
-      },
-      created: function () {
-        this.ProjectPictures()
-      }
-    })
-  </script>
+      })
+    </script>
 </body>
 
 </html>
