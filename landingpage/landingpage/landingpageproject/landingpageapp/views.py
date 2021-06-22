@@ -31,6 +31,9 @@ def poke(request):
 def climb_up(request):
     return render(request, 'landingpageapp/climb_up.html')
 
+def moogle(request):
+    return render(request, 'landingpageapp/moogle.html')
+
 def load_posts(request):
     posts = Post.objects.all().order_by('-created_date')
     post_data = []
@@ -111,4 +114,5 @@ def project_pictures(request):
     return JsonResponse({'project_pictures': project_pictures_data})
 
 def page_bts(request):
+    links_data = []
     pass

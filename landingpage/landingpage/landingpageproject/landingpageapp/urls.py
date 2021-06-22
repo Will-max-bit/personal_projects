@@ -14,5 +14,6 @@ urlpatterns = [
     path('projects/', views.projects, name='projects'),
     path('project_pictures', views.project_pictures, name='project_pictures'),
     path('rose_tattoo/', views.rose_tat, name='rose_tat'),
-    path('climb_up/', views.climb_up, name='climb_up')
+    path('climb_up/', views.climb_up, name='climb_up'),
+    path('moogle/', views.moogle, name='moogle')
 ]
