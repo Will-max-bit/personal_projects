@@ -10,111 +10,195 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+  <!-- google fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Great+Vibes&family=Notable&family=Rock+Salt&family=Satisfy&display=swap"
+    rel="stylesheet">
   <title>Projects</title>
   <style>
-    .rainbow-text {
-      background-image: linear-gradient(to left, red, violet, indigo, blue, green, yellow, orange, red);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    #top-bar{
-      background-image: linear-gradient(to left, red, rgb(231, 231, 231), red, rgb(231, 231, 231), red, rgb(231, 231, 231), red, rgb(231, 231, 231));
+    #top-bar {
+      background-image: linear-gradient(to left, black, rgb(231, 231, 231), black, rgb(231, 231, 231), black, rgb(231, 231, 231), black, rgb(231, 231, 231));
+      opacity: 0.75;
     }
 
-    #imgs:hover{
-      box-shadow: 0 0 6px #102447;
+    #imgs:hover {
+      box-shadow: 0 0 12px #cecece;
+
+    }
+
+    #imgs {
+      border-radius: 8px;
+    }
+
+    h1 {
+      font-family: 'Notable', sans-serif;
+    }
+
+    #climb {
+      font-family: 'Rock Salt', cursive;
+    }
+
+    #moog {
+      font-family: 'Dela Gothic One', cursive;
+    }
+
+    #rose {
+      font-family: 'Great Vibes', cursive;
+    }
+    #poke{
+      font-family: 'Satisfy', cursive;
+    }
+    /* background */
+    @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap') repeat scroll 0 0 rgba(0, 0, 0, 0);
+
+    body {
+      background: #fff;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-family: 'Lobster', cursive;
+    }
+    .wrapper {
+      animation: scroll 70s linear infinite;
+      background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"), #111111;
+      color: #eee;
+      height: 100vh;
+      min-width: 360px;
+      width: 100%;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* align-items: center; */
+      /* perspective: 1000px; */
+      perspective-origin: 50% 50%;
+
+    }
+
+    @keyframes scroll {
+      100% {
+        background-position: 0px -3000px;
+      }
+    }
+
+    @media (prefers-reduced-motion) {
+      .wrapper {
+        animation: scroll 200s linear infinite;
+      }
+    }
+
+    @media (min-width: 670px) {
+      .title {
+        font-size: 5rem;
+      }
     }
   </style>
 
 </head>
 
-<body>
-  <!-- Button trigger modal -->
-  <div class="container-fluid sticky-top" id="top-bar">
-    <div class="text-center">
-      <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Navigation
-      </button>
+<body class="wrapper">
+  <div class="main">
+    <!-- Button trigger modal -->
+    <div class="container-fluid sticky-top" id="top-bar">
+      <div class="text-center">
+        <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Navigation
+        </button>
+      </div>
     </div>
-  </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen-xl-down">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Nav Panel</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body container">
-          <div class="row">
-            <div class="col">
-              <a style="text-decoration: none !important; color:black !important;" href="{% url 'landingpageapp:home_page'%}">
-                <img id='imgs' src="{% static 'landingpageapp/home.jpg'%}" class="img-thumbnail" style="max-height: 50%;" alt="">
-              <h5 class="text-left" >Home</h5>
-              </a>
-            </div>
-            <div class="col">
-              <a style="text-decoration: none !important; color:black !important" href="{% url 'landingpageapp:coding_challenges'%}">
-                <img id='imgs' src="{% static 'landingpageapp/code3.jpg'%}" class="img-thumbnail" style="max-height: 50%;" alt="">
-              <h5 class="text-center" >Coding Challenges</h5>
-              </a>
-            </div>
-            <div class="col">
-              <a style="text-decoration: none !important; color:black !important" href="{% url 'landingpageapp:index'%}">
-                <img id='imgs' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-thumbnail" style="max-height: 50%;" alt="">
-                <h5 class="text-center" >Learning blog</h5>
-              </a>
-              
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-xl-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nav Panel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body container">
+            <div class="row">
+              <div class="col">
+                <a style="text-decoration: none !important; color:black !important;"
+                  href="{% url 'landingpageapp:home_page'%}">
+                  <img id='imgs' src="{% static 'landingpageapp/home.jpg'%}" class="img-thumbnail"
+                    style="max-height: 50%;" alt="">
+                  <h5 class="text-left">Home</h5>
+                </a>
+              </div>
+              <div class="col">
+                <a style="text-decoration: none !important; color:black !important"
+                  href="{% url 'landingpageapp:coding_challenges'%}">
+                  <img id='imgs' src="{% static 'landingpageapp/code3.jpg'%}" class="img-thumbnail"
+                    style="max-height: 50%;" alt="">
+                  <h5 class="text-center">Coding Challenges</h5>
+                </a>
+              </div>
+              <div class="col">
+                <a style="text-decoration: none !important; color:black !important"
+                  href="{% url 'landingpageapp:index'%}">
+                  <img id='imgs' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-thumbnail"
+                    style="max-height: 50%;" alt="">
+                  <h5 class="text-center">Learning blog</h5>
+                </a>
+
+              </div>
             </div>
           </div>
+          <div class="modal-footer container justify-content-center">
+            <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-footer container justify-content-center">
-          <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <h1 class="text-center">Projects</h1>
+    <!-- carousel displaying projects here -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade mx-3" data-bs-ride="carousel"
+      data-bs-interval='3000' transistion: transform 2s ease, opacity .5s ease-out>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img id='imgs' src="{% static 'landingpageapp/cap1.jpg'%}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img id='imgs' src="{% static 'landingpageapp/rose_tattoo.jpg'%}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img id='imgs' src="{%static 'landingpageapp/poke1.jpg'%}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img id='imgs' src="{%static 'landingpageapp/moogle_img.jpg'%}" class="d-block w-100" alt="...">
         </div>
       </div>
     </div>
-  </div>
-  <!-- carousel displaying projects here -->
-  <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel"
-    data-bs-interval='3000' transistion: transform 2s ease, opacity .5s ease-out>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img id='imgs' src="{% static 'landingpageapp/cap1.jpg'%}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img id='imgs' src="{% static 'landingpageapp/rose_tattoo.jpg'%}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img id='imgs' src="{%static 'landingpageapp/poke1.jpg'%}" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img id='imgs' src="{%static 'landingpageapp/moogle_img.jpg'%}" class="d-block w-100" alt="...">
-      </div>
-    </div>
-  </div>
-  <hr>
-  <!-- projects pictures with links start here -->
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <a href="{% url 'landingpageapp:climb_up' %}">
-          <img id='imgs' src="{% static 'landingpageapp/cb1.jpg'%}" class="img-fluid my-2" alt="">
-        </a>
-        <a href="{% url 'landingpageapp:moogle' %}">
-          <img id='imgs' src="{% static 'landingpageapp/moogle_img.jpg'%}" class="img-fluid my-2" alt="">
-        </a>
-        <a href="{% url 'landingpageapp:rose_tat' %}">
-          <img id='imgs' src="{% static 'landingpageapp/rose_tattoo1.jpg'%}" class="img-fluid my-2" alt="">
-        </a>
-        <img id='imgs' src="{% static 'landingpageapp/poke1.jpg'%}" class="img-fluid my-2" alt="">
+    <hr>
+    <!-- projects pictures with links start here -->
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center" id="climb">Climb_Up</h2>
+          <p class="text-center">Built with Django and Vue.Js and Bootstrap</p>
+          <a href="{% url 'landingpageapp:climb_up' %}">
+            <img id='imgs' src="{% static 'landingpageapp/cb1.jpg'%}" class="img-fluid my-2" alt="">
+          </a>
+          <h2 class="text-center" id="moog">Moogle</h2>
+          <p class="text-center">Built with bootstrap and custom CSS</p>
+          <a href="{% url 'landingpageapp:moogle' %}">
+            <img id='imgs' src="{% static 'landingpageapp/moogle_img.jpg'%}" class="img-fluid my-2" alt="">
+          </a>
+          <h2 class="text-center" id="rose">Rose Tattoo</h2>
+          <p class="text-center">Built with Django and Bootstrap</p>
+          <a href="{% url 'landingpageapp:rose_tat' %}">
+            <img id='imgs' src="{% static 'landingpageapp/rose_tattoo1.jpg'%}" class="img-fluid my-2" alt="">
+          </a>
+          <h2 class="text-center" id="poke">Pokedex</h2>
+          <p class="text-center">Built with Django, Vue.Js and Bootstrap</p>
+          <img id='imgs' src="{% static 'landingpageapp/poke1.jpg'%}" class="img-fluid my-2" alt="">
+        </div>
       </div>
     </div>
+
+
   </div>
-
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
