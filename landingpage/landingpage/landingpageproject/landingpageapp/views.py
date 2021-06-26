@@ -102,7 +102,16 @@ def code_wars(request):
         'language_logo': code.language.language_logo.url
         })
     return JsonResponse({'codewars_posts': code_wars_data})
-
+# get title out of database, use title for new function that will return urls
+def code_api(request):
+    codewars_titles = CodeWars.objects.get('title')
+    code_title_data = []
+    for title in codewars_titles:
+        code_title_data.append({
+            'title':title.title,
+        })
+    return JsonResponse({'codewars_titles': code_title_data })
+    
 def project_pictures(request):
     project_pictures_posts = Projects_pictures.objects.all()
     project_pictures_data = []
