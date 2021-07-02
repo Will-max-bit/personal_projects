@@ -15,48 +15,121 @@
 </head>
 
 <body>
-  <div class="sticky-md-top">
-    <img src="https://www.codewars.com/users/Will-max-bit/badges/large">
-    <div class="row">
-      <div class="col">
-        Date completed
+  <div class="main">
+    <div class="container-fluid sticky-top mt-1">
+      <div class='text-center'>
+        <img class="text-center" src="https://www.codewars.com/users/Will-max-bit/badges/large">
       </div>
-      <div class="col">
-        Challenge title
+      <div class="text-center my-1">
+        <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Navigation
+        </button>
       </div>
-      <div class="col">
-        Challenge Rank
-      </div>
-      <div class="col">
-        Completed Challenge
-      </div>
-      <div class="col">
-        Language
-      </div>
-      <hr>
-    </div>
-  </div>
-  <div id="app">
-    <div class="row" v-for="code in posts">
-      <div class="col">
-        [[code.completed_date]]
-      </div>
-      <div class="col">
-        [[code.title]]
-      </div>
-      <div class="col">
-        [[code.rank]]
-      </div>
-      <div class="col">
-        <img class=".img-thumbnail" v-bind:src="code.code_image" style="width: 60%; border:none;height: 60%;" alt="">
-      </div>
-      <div class="col">
-        [[code.language_name]]
-        <img v-bind:src="code.language_logo" style="width: 60%; border:none;height: 60%;" alt="">
+      <div class="row no-wrap">
+        <div class="col">
+          Date completed
+        </div>
+        <div class="col">
+          Challenge title
+        </div>
+        <div class="col">
+          Challenge Rank
+        </div>
+        <div class="col">
+          Completed Challenge
+        </div>
+        <div class="col">
+          Language
+        </div>
       </div>
     </div>
-  </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen-xl-down">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nav Panel</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body container">
+            <div class="row">
+              <div class="col">
+                <a style="text-decoration: none !important; color:black !important;"
+                  href="{% url 'landingpageapp:home_page'%}">
+                  <img id='imgs' src="{% static 'landingpageapp/home.jpg'%}" class="img-thumbnail"
+                    style="max-height: 50%;" alt="">
+                  <h5 class="text-left">Home</h5>
+                </a>
+              </div>
+              <div class="col">
+                <a style="text-decoration: none !important; color:black !important"
+                  href="{% url 'landingpageapp:projects'%}">
+                  <img id='imgs' src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-thumbnail"
+                    style="max-height: 50%;" alt="">
+                  <h5 class="text-center">Projects</h5>
+                </a>
+              </div>
+              <div class="col">
+                <a style="text-decoration: none !important; color:black !important"
+                  href="{% url 'landingpageapp:index'%}">
+                  <img id='imgs' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-thumbnail"
+                    style="max-height: 50%;" alt="">
+                  <h5 class="text-center">Learning blog</h5>
+                </a>
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer container justify-content-center">
+            <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="app">
+      <div class="container-fluid">
+        <div class="row no-wrap">
+          <!-- <div class="col">
+          Date completed
+        </div>
+        <div class="col">
+          Challenge title
+        </div>
+        <div class="col">
+          Challenge Rank
+        </div>
+        <div class="col">
+          Completed Challenge
+        </div>
+        <div class="col">
+          Language
+        </div> -->
+          <hr>
+          <div class="row no-wrap" v-for="code in posts">
+            <div class="col">
+              [[code.completed_date]]
+            </div>
+            <div class="col">
+              [[code.title]]
+            </div>
+            <div class="col">
+              [[code.rank]]
+            </div>
+            <div class="col">
+              <img class=".img-thumbnail my-1" v-bind:src="code.code_image"
+                style="min-width: 50% !important; max-height: 50% !important;" alt="">
+            </div>
+            <div class="col">
+              [[code.language_name]]
+              <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/@diracleo/vue-enlargeable-image/dist/vue-enlargeable-image.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -80,10 +153,19 @@
             console.log(response.data)
           })
         },
+        // titleWars: function (){
+        //   axios({
+        //     url: "{% url 'landingpageapp:code_api'%}",
+        //     method: 'get',
+        //   }).then(response => {
+        //     console.log(response.data)
+        //   })
+        // }
 
       },
       created: function () {
         this.CodeWars()
+        // this.titleWars()
       }
     })
   </script>
