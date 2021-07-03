@@ -16,7 +16,7 @@
 
 <body>
   <div class="main">
-    <div class="container-fluid sticky-top mt-1">
+    <div class="container-fluid sticky-top">
       <div class='text-center'>
         <img class="text-center" src="https://www.codewars.com/users/Will-max-bit/badges/large">
       </div>
@@ -27,17 +27,17 @@
       </div>
       <div class="row no-wrap">
         <div class="col">
-          Date completed
+          Date
         </div>
         <div class="col">
-          Challenge title
+          Title
         </div>
         <div class="col">
-          Challenge Rank
+          Rank
         </div>
-        <div class="col">
+        <!-- <div class="col">
           Completed Challenge
-        </div>
+        </div> -->
         <div class="col">
           Language
         </div>
@@ -89,45 +89,32 @@
     </div>
     <div id="app">
       <div class="container-fluid">
-        <div class="row no-wrap">
-          <!-- <div class="col">
-          Date completed
-        </div>
-        <div class="col">
-          Challenge title
-        </div>
-        <div class="col">
-          Challenge Rank
-        </div>
-        <div class="col">
-          Completed Challenge
-        </div>
-        <div class="col">
-          Language
-        </div> -->
-          <hr>
-          <div class="row no-wrap" v-for="code in posts">
-            <div class="col">
-              [[code.completed_date]]
-            </div>
-            <div class="col">
-              [[code.title]]
-            </div>
-            <div class="col">
-              [[code.rank]]
-            </div>
+        <hr>
+        <div class="row no-wrap" v-for="code in posts">
+          <div class="col">
+            [[code.completed_date]]
+          </div>
+          <div class="col">
+            [[code.title]]
+          </div>
+          <div class="col">
+            [[code.rank]]
+          </div>
+          <div class="col ">
+            <!-- [[code.language_name]] -->
+            <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
+          </div>
+          <div class="row text-center p-0">
             <div class="col">
               <img class=".img-thumbnail my-1" v-bind:src="code.code_image"
-                style="min-width: 50% !important; max-height: 50% !important;" alt="">
-            </div>
-            <div class="col">
-              [[code.language_name]]
-              <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
+                style=" max-height: 50% !important;" alt="">
             </div>
           </div>
+          <hr>
         </div>
       </div>
     </div>
+  </div>
   </div>
   <script src="https://unpkg.com/@diracleo/vue-enlargeable-image/dist/vue-enlargeable-image.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
