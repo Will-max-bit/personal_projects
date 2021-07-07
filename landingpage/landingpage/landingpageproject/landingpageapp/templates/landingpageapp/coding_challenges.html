@@ -10,13 +10,36 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+  <style>
+    .top-col {
+      font-family: 'Zen Tokyo Zoo', cursive;
+      font-size: 4vw;
+    }
+    .data {
+      font-family: 'Righteous', cursive;
+      font-size: 2vw;
+    }
+    #app{
+      background: url("{% static 'landingpageapp/background1.jpg' %}");
+      background-size: contain;
+    }
+    #top-bar{
+      background-color: whitesmoke !important;
+      padding: 0;
+      margin: 0 auto;
+    }
+  </style>
   <title>coding challenges</title>
+
 </head>
 
 <body>
   <div class="main">
-    <div class="container-fluid sticky-top">
+    <div class="container-fluid sticky-top" id="top-bar">
       <div class='text-center'>
         <img class="text-center" src="https://www.codewars.com/users/Will-max-bit/badges/large">
       </div>
@@ -26,19 +49,16 @@
         </button>
       </div>
       <div class="row no-wrap">
-        <div class="col">
+        <div class="col top-col">
           Date
         </div>
-        <div class="col">
+        <div class="col top-col">
           Title
         </div>
-        <div class="col">
+        <div class="col top-col">
           Rank
         </div>
-        <!-- <div class="col">
-          Completed Challenge
-        </div> -->
-        <div class="col">
+        <div class="col top-col">
           Language
         </div>
       </div>
@@ -91,23 +111,22 @@
       <div class="container-fluid">
         <hr>
         <div class="row no-wrap" v-for="code in posts">
-          <div class="col">
+          <div class="col data">
             [[code.completed_date]]
           </div>
-          <div class="col">
+          <div class="col data">
             [[code.title]]
           </div>
-          <div class="col">
+          <div class="col data">
             [[code.rank]]
           </div>
-          <div class="col ">
+          <div class="col">
             <!-- [[code.language_name]] -->
             <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
           </div>
           <div class="row text-center p-0">
             <div class="col">
-              <img class=".img-thumbnail my-1" v-bind:src="code.code_image"
-                style=" max-height: 50% !important;" alt="">
+              <img class=".img-fluid my-1" v-bind:src="code.code_image" alt="">
             </div>
           </div>
           <hr>
@@ -116,6 +135,7 @@
     </div>
   </div>
   </div>
+  <!-- https://unsplash.com/photos/B-x4VaIriRc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink -->
   <script src="https://unpkg.com/@diracleo/vue-enlargeable-image/dist/vue-enlargeable-image.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>

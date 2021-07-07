@@ -22,7 +22,6 @@ body {
 </style>
 <body>
   <div id="app">
-    <h1>Hello, world!</h1>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -33,14 +32,13 @@ body {
       </div>
 
     </div>
-    [[test]]
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row mt-1">
       <div class="card mx-1" style="width: 40%;">
         <img src="{% static 'landingpageapp/projects_edited.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><a href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
           <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
       <div class="card mx-1" style="width: 40%;height: 60%;">
