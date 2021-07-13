@@ -35,78 +35,79 @@
             </li>
         </ul>
         {% endif %}
-        <div class="container" >
+        <div class="container">
             <div class="row">
                 <div class="text-center my-1">
-                    <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#Menu-Modal">
-                      Navigation
+                    <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal"
+                        data-bs-target="#Menu-Modal">
+                        Navigation
                     </button>
-                  </div>
+                </div>
             </div>
-            <div class="row text-center" >
+            <div class="row text-center">
                 <div class="col">
                     <H4 data-aos="fade-right" data-aos-duration="3000">Hi I'm Will</H4>
                 </div>
             </div>
-            <div class="row text-center" >
+            <div class="row text-center">
                 <div class="col">
                     <p data-aos="fade-left" data-aos-duration="3000"><strong>A simple</strong></p>
                 </div>
             </div>
-            <div class="row text-center" >
+            <div class="row text-center">
                 <div class="col">
                     <p data-aos="fade-right" data-aos-duration="3000"><strong>yet fun</strong></p>
                 </div>
             </div>
-            <div class="row text-center" >
+            <div class="row text-center">
                 <div class="col">
                     <p data-aos="fade-left" data-aos-duration="3000"><strong>learning blog</strong></p>
                 </div>
             </div>
         </div>
         <!-- Modal -->
-    <div class="modal fade" id="Menu-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-xl-down">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nav Panel</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body container">
-              <div class="row">
-                <div class="col">
-                  <a style="text-decoration: none !important; color:black !important;"
-                    href="{% url 'landingpageapp:home_page'%}">
-                    <img id='imgs' src="{% static 'landingpageapp/home.jpg'%}" class="img-thumbnail"
-                      style="max-height: 50%;" alt="">
-                    <h5 class="text-left">Home</h5>
-                  </a>
+        <div class="modal fade" id="Menu-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen-xl-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nav Panel</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body container">
+                        <div class="row">
+                            <div class="col">
+                                <a style="text-decoration: none !important; color:black !important;"
+                                    href="{% url 'landingpageapp:home_page'%}">
+                                    <img id='imgs' src="{% static 'landingpageapp/home.jpg'%}" class="img-thumbnail"
+                                        style="max-height: 50%;" alt="">
+                                    <h5 class="text-left">Home</h5>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a style="text-decoration: none !important; color:black !important"
+                                    href="{% url 'landingpageapp:projects'%}">
+                                    <img id='imgs' src="{% static 'landingpageapp/projects_edited.jpg'%}"
+                                        class="img-thumbnail" style="max-height: 50%;" alt="">
+                                    <h5 class="text-center">Projects</h5>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a style="text-decoration: none !important; color:black !important"
+                                    href="{% url 'landingpageapp:index'%}">
+                                    <img id='imgs' src="{% static 'landingpageapp/blog_edited.jpg'%}"
+                                        class="img-thumbnail" style="max-height: 50%;" alt="">
+                                    <h5 class="text-center">Learning blog</h5>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer container justify-content-center">
+                        <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="col">
-                  <a style="text-decoration: none !important; color:black !important"
-                    href="{% url 'landingpageapp:projects'%}">
-                    <img id='imgs' src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-thumbnail"
-                      style="max-height: 50%;" alt="">
-                    <h5 class="text-center">Projects</h5>
-                  </a>
-                </div>
-                <div class="col">
-                  <a style="text-decoration: none !important; color:black !important"
-                    href="{% url 'landingpageapp:index'%}">
-                    <img id='imgs' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-thumbnail"
-                      style="max-height: 50%;" alt="">
-                    <h5 class="text-center">Learning blog</h5>
-                  </a>
-  
-                </div>
-              </div>
             </div>
-            <div class="modal-footer container justify-content-center">
-              <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Close</button>
-            </div>
-          </div>
         </div>
-      </div>
         <div class="container">
 
             <!-- Modal -->
@@ -140,7 +141,7 @@
             </div>
 
 
-            <div class="row" id="cards">
+            <div class="row ml-3" id="cards">
                 <div class="card mt-2" data-aos="flip-up" data-aos-duration="3000" v-for="post in posts">
                     <div class="card-body">
                         <h5 class="card-title text-center">[[post.title]]</h5>
@@ -153,11 +154,6 @@
                 </div>
 
             </div>
-            <hr>
-
-
-
-            <hr>
         </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
