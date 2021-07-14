@@ -18,16 +18,30 @@
     opacity: 1 !important;
         }
     </style> -->
+    <style>
+       body{
+           background-image: url("{% static 'landingpageapp/project_bk.jpg'%}");
+       } 
+       #intro{
+           animation: mymove 5s infinite;
+       }
+       @keyframes mymove {
+           50% {text-shadow: 10px 20px 30px black;}
+       }
+       #intro{
+        color: #EEF5EB;
+       }
+    </style>
 </head>
 
 <body>
     <div id="app">
         {% if user.is_authenticated %}
         <ul class="nav justify-content-end sticky-top mt-1">
-            <li class="nav-item" v-for="category in categories">
+            <!-- <li class="nav-item" v-for="category in categories">
                 <a class="nav-link active" v-on:click="postIndex" aria-current="page" v-bind:value="category.id"
                     href="#">[[category.name]]</a>
-            </li>
+            </li> -->
             <li>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     New Post
@@ -35,37 +49,14 @@
             </li>
         </ul>
         {% endif %}
-        <div class="container">
-            <div class="row">
-                <div class="text-center my-1">
-                    <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal"
-                        data-bs-target="#Menu-Modal">
-                        Navigation
-                    </button>
-                </div>
+        <div class="row sticky-top">
+            <div class="text-center my-1">
+                <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal"
+                    data-bs-target="#Menu-Modal">
+                    Navigation
+                </button>
             </div>
-            <div class="row text-center">
-                <div class="col">
-                    <H4 data-aos="fade-right" data-aos-duration="3000">Hi I'm Will</H4>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                    <p data-aos="fade-left" data-aos-duration="3000"><strong>A simple</strong></p>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                    <p data-aos="fade-right" data-aos-duration="3000"><strong>yet fun</strong></p>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col">
-                    <p data-aos="fade-left" data-aos-duration="3000"><strong>learning blog</strong></p>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
+             <!-- Modal -->
         <div class="modal fade" id="Menu-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xl-down">
                 <div class="modal-content">
@@ -108,6 +99,30 @@
                 </div>
             </div>
         </div>
+        </div>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <H4 id="intro" class="fs-4 text-uppercase" data-aos="fade-right" data-aos-duration="3000">Hi I'm Will</H4>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <H4 id="intro" class="fs-3 text-uppercase" data-aos="fade-left" data-aos-duration="3000">A simple</H4>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <H4 id="intro" class="fs-2 text-uppercase" data-aos="fade-right" data-aos-duration="3000">yet fun</H4>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <H4 id="intro" class="fs-1 text-uppercase" data-aos="fade-left" data-aos-duration="3000">learning blog</H4>
+                </div>
+            </div>
+        </div>
+       
         <div class="container">
 
             <!-- Modal -->
@@ -139,7 +154,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="row ml-3" id="cards">
                 <div class="card mt-2" data-aos="flip-up" data-aos-duration="3000" v-for="post in posts">

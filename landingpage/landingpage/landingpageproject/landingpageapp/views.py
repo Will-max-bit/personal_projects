@@ -122,6 +122,6 @@ def project_pictures(request):
         })
     return JsonResponse({'project_pictures': project_pictures_data})
 
-def page_bts(request):
-    links_data = []
-    pass
+# def page_bts(request):
+#     links_data = []
+#     pass

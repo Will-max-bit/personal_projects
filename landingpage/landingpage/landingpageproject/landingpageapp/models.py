@@ -54,3 +54,4 @@ class Projects_pictures(models.Model):
 
     def __str__(self):
         return self.title
+
