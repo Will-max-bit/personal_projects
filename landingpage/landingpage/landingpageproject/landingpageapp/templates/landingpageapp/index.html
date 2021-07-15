@@ -12,6 +12,10 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <!-- aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Open+Sans:ital,wght@1,300&family=Otomanopee+One&family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet">
     <title>Programming Journey</title>
     <!-- <style>
         p,h4{
@@ -30,6 +34,17 @@
        }
        #intro{
         color: #EEF5EB;
+        font-family: 'Otomanopee One', sans-serif;
+
+       }
+       #text-cat{
+        font-family: 'Concert One', cursive;
+       }
+       #title-text{
+        font-family: 'Open Sans', sans-serif;
+       }
+       #title-blog{
+        font-family: 'Source Code Pro', monospace;
        }
     </style>
 </head>
@@ -125,7 +140,7 @@
        
         <div class="container">
 
-            <!-- Modal -->
+            <!-- new post Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
@@ -158,9 +173,9 @@
             <div class="row ml-3" id="cards">
                 <div class="card mt-2" data-aos="flip-up" data-aos-duration="3000" v-for="post in posts">
                     <div class="card-body">
-                        <h5 class="card-title text-center">[[post.title]]</h5>
-                        <p class='text-center'><strong>[[post.category]]</strong></p>
-                        <p class="card-text text-center">[[post.text]]</p>
+                        <h5 id="title-blog" class="card-title text-center">[[post.title]]</h5>
+                        <p id="text-cat" class='text-center'><strong>[[post.category]]</strong></p>
+                        <p id='title-text'class="card-text text-center">[[post.text]]</p>
 
                         <p class="card-text text-center"><small class="text-muted">[[post.created_date]]</small></p>
                     </div>
