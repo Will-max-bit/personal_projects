@@ -22,6 +22,11 @@ body {
 </style>
 <body>
   <div id="app">
+  <Particles
+            id='tsparticles'
+            :particlesInit='particlesInit'
+            :particlesLoaded='particlesLoaded'
+            url="http://food.bar/particles.json"
     <div class="container">
       <div class="row">
         <div class="col">
@@ -37,29 +42,24 @@ body {
         <img src="{% static 'landingpageapp/projects_edited.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><a href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
       <div class="card mx-1" style="width: 40%;height: 60%;">
         <img src="{% static 'landingpageapp/code3.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><a href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
         </div>
       </div>
       <div class="card mx-1" style="width: 40%;">
         <img src="{% static 'landingpageapp/blog_edited.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <h6 class="card-title" ><a href="{% url 'landingpageapp:index'%}">learning blog</a> </h6>
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-          <!-- <a href="{% url 'landingpageapp:index'%}" class="btn btn-primary">Go somewhere</a> -->
+          
         </div>
       </div>
 
     </div>
-
+    />
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
@@ -67,6 +67,9 @@ body {
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
   <script>
+  <script>
+  import Particles from ""
+  </script>
     let app = new Vue({
       el: '#app',
       delimiters: ['[[', ']]'],
