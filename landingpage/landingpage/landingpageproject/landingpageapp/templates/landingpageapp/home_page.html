@@ -22,20 +22,25 @@ body {
 </style>
 <body>
   <div id="app">
-  <Particles
-            id='tsparticles'
-            :particlesInit='particlesInit'
-            :particlesLoaded='particlesLoaded'
-            url="http://food.bar/particles.json"
+  
     <div class="container">
-      <div class="row">
+      <div class="row mt-2">
         <div class="col">
-          <div class="card" style="width: 18rem; border:none;">
+          <div class="card rounded mx-auto d-block" style="width: 18rem; border:none;">
             <img src="{% static 'landingpageapp/profile_image.jpg'%}" class="card-img-top" alt="">
           </div>
         </div>
+        <div class="col">
+          <p class="text-center fs-3">
+            Succulents cray cred, ut nulla church-key you probably haven't heard of them kickstarter YOLO consequat helvetica etsy lo-fi hammock everyday carry.
+          </p>
+        </div>
       </div>
-
+<div class="row">
+  <p class="text-center fs-1">
+    Plaid craft beer non mustache tumeric qui helvetica direct trade mlkshk four loko letterpress hammock 8-bit listicle. Prism 8-bit enamel pin shoreditch microdosing twee man braid dolore ennui meditation cornhole id flexitarian sed. Subway tile hell of ut enim adipisicing sriracha drinking vinegar fanny pack austin authentic chartreuse pork belly jianbing swag.
+  </p>
+</div>
     </div>
     <div class="d-flex flex-row mt-1">
       <div class="card mx-1" style="width: 40%;">
@@ -45,7 +50,7 @@ body {
         </div>
       </div>
       <div class="card mx-1" style="width: 40%;height: 60%;">
-        <img src="{% static 'landingpageapp/code3.jpg'%}" class="card-img-top" alt="...">
+        <img style="min-height: 80% !important;" src="{% static 'landingpageapp/code3.jpg'%}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><a href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
         </div>
@@ -59,7 +64,6 @@ body {
       </div>
 
     </div>
-    />
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
@@ -67,9 +71,6 @@ body {
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
   <script>
-  <script>
-  import Particles from ""
-  </script>
     let app = new Vue({
       el: '#app',
       delimiters: ['[[', ']]'],
