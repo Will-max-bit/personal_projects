@@ -16,13 +16,27 @@
   <title>Landing Page</title>
 </head>
 <style>
-body {
-  background-color:rgb(75,74,74);
-}
+  body {
+    background-image: url('{% static "landingpageapp/home_bk.jpg" %}');
+  }
+
+  p {
+    color: beige;
+  }
+  /* .cords{
+    opacity: 0;
+  } */
+  /* #link-cards{
+    float: inherit;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
 </style>
+
 <body>
   <div id="app">
-  
+
     <div class="container">
       <div class="row mt-2">
         <div class="col">
@@ -32,37 +46,41 @@ body {
         </div>
         <div class="col">
           <p class="text-center fs-3">
-            Succulents cray cred, ut nulla church-key you probably haven't heard of them kickstarter YOLO consequat helvetica etsy lo-fi hammock everyday carry.
+            Succulents cray cred, ut nulla church-key you probably haven't heard of them kickstarter YOLO consequat
+            helvetica etsy lo-fi hammock everyday carry.
           </p>
         </div>
       </div>
-<div class="row">
-  <p class="text-center fs-1">
-    Plaid craft beer non mustache tumeric qui helvetica direct trade mlkshk four loko letterpress hammock 8-bit listicle. Prism 8-bit enamel pin shoreditch microdosing twee man braid dolore ennui meditation cornhole id flexitarian sed. Subway tile hell of ut enim adipisicing sriracha drinking vinegar fanny pack austin authentic chartreuse pork belly jianbing swag.
-  </p>
-</div>
+      <div class="row">
+        <p class="text-center fs-1">
+          Plaid craft beer non mustache tumeric qui helvetica direct trade mlkshk four loko letterpress hammock 8-bit
+          listicle. Prism 8-bit enamel pin shoreditch microdosing twee man braid dolore ennui meditation cornhole id
+          flexitarian sed. Subway tile hell of ut enim adipisicing sriracha drinking vinegar fanny pack austin authentic
+          chartreuse pork belly jianbing swag.
+        </p>
+      </div>
     </div>
-    <div class="d-flex flex-row mt-1">
-      <div class="card mx-1" style="width: 40%;">
-        <img src="{% static 'landingpageapp/projects_edited.jpg'%}" class="card-img-top" alt="...">
-        <div class="card-body">
+    <div class="container-fluid">
+      <div class="flex-row">
+        <div class="col-sm">
+          <div class="card mx-1 my-5 cords">
+            <img id='link-cards'src="{% static 'landingpageapp/projects_edited.jpg'%}" class="card-img-top" alt="...">
+          </div>
           <h5 class="card-title"><a href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
         </div>
-      </div>
-      <div class="card mx-1" style="width: 40%;height: 60%;">
-        <img style="min-height: 80% !important;" src="{% static 'landingpageapp/code3.jpg'%}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="col-sm">
+          <div class="card mx-1 my-5 cords">
+            <img id='link-cards'src="{% static 'landingpageapp/code5.jpg'%}" class="card-img-top" alt="...">
+          </div>
           <h5 class="card-title"><a href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
         </div>
-      </div>
-      <div class="card mx-1" style="width: 40%;">
-        <img src="{% static 'landingpageapp/blog_edited.jpg'%}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h6 class="card-title" ><a href="{% url 'landingpageapp:index'%}">learning blog</a> </h6>
-          
+        <div class="col-sm">
+          <div class="card mx-1 my-5 cords">
+            <img id='link-cards'src="{% static 'landingpageapp/blog_edited.jpg'%}" class="card-img-top" alt="...">
+          </div> 
+          <h6 class="card-title"><a href="{% url 'landingpageapp:index'%}">learning blog</a> </h6>
         </div>
       </div>
-
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
