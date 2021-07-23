@@ -32,6 +32,15 @@
     height: 100%;
     object-fit: cover;
   } */
+  #card-links{
+    color: white !important;
+  }
+  /* .link-hover:hover{
+    transform: scale(1.5);
+  } */
+  html{
+    scroll-behavior: smooth;
+  }
 </style>
 
 <body>
@@ -39,20 +48,23 @@
 
     <div class="container">
       <div class="row mt-2">
+        <button type="button" class="btn btn-dark btn-lg mb-1 " >
+         <a href="links"></a> Navigation
+        </button>
         <div class="col">
           <div class="card rounded mx-auto d-block" style="width: 18rem; border:none;">
             <img src="{% static 'landingpageapp/profile_image.jpg'%}" class="card-img-top" alt="">
           </div>
         </div>
         <div class="col">
-          <p class="text-center fs-3">
+          <p class="text-center fs-4">
             Succulents cray cred, ut nulla church-key you probably haven't heard of them kickstarter YOLO consequat
             helvetica etsy lo-fi hammock everyday carry.
           </p>
         </div>
       </div>
       <div class="row">
-        <p class="text-center fs-1">
+        <p class="text-center fs-2">
           Plaid craft beer non mustache tumeric qui helvetica direct trade mlkshk four loko letterpress hammock 8-bit
           listicle. Prism 8-bit enamel pin shoreditch microdosing twee man braid dolore ennui meditation cornhole id
           flexitarian sed. Subway tile hell of ut enim adipisicing sriracha drinking vinegar fanny pack austin authentic
@@ -61,24 +73,24 @@
       </div>
     </div>
     <div class="container-fluid">
-      <div class="row">
+      <div class="row" id="links">
         <div class="col-sm-4">
           
             <img id='link-cards'src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-fluid" alt="...">
           
-          <h5 class="card-title text-center"><a href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
+          <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
         </div>
         <div class="col-sm-4">
           
-            <img id='link-cards'src="{% static 'landingpageapp/code5.jpg'%}" class="img-fluid" alt="...">
+            <img id='link-cards'src="{% static 'landingpageapp/code55.jpg'%}" class="img-fluid" alt="...">
           
-          <h5 class="card-title text-center"><a href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
+          <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
         </div>
         <div class="col-sm-4">
           
             <img id='link-cards'src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-fluid" alt="...">
            
-          <h5 class="card-title text-center"><a href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
+          <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
         </div>
       </div>
     </div>
