@@ -46,6 +46,10 @@
        #title-blog{
         font-family: 'Source Code Pro', monospace;
        }
+       .modal-backdrop-opacity{
+           opacity: 0 !important;
+           /* background-color: rgba(0,0,0, .000.1) !important; */
+       }
     </style>
 </head>
 
@@ -53,10 +57,6 @@
     <div id="app">
         {% if user.is_authenticated %}
         <ul class="nav justify-content-end sticky-top mt-1">
-            <!-- <li class="nav-item" v-for="category in categories">
-                <a class="nav-link active" v-on:click="postIndex" aria-current="page" v-bind:value="category.id"
-                    href="#">[[category.name]]</a>
-            </li> -->
             <li>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     New Post
@@ -64,22 +64,14 @@
             </li>
         </ul>
         {% endif %}
-        <div class="row sticky-top">
-            <div class="text-center my-1">
-                <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal"
-                    data-bs-target="#Menu-Modal">
-                    Navigation
-                </button>
-            </div>
-             <!-- Modal -->
         <div class="modal fade" id="Menu-Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen-xl-down">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Nav Panel</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"  aria-label="Close"></button>
                     </div>
-                    <div class="modal-body container">
+                    <div class="modal-body container" data-bs-backdrop='false'>
                         <div class="row">
                             <div class="col">
                                 <a style="text-decoration: none !important; color:black !important;"
@@ -114,6 +106,14 @@
                 </div>
             </div>
         </div>
+        <div class="row sticky-top">
+            <div class="text-center my-1">
+                <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal"
+                    data-bs-target="#Menu-Modal">
+                    Navigation
+                </button>
+            </div>
+             <!-- Modal -->
         </div>
         <div class="container">
             <div class="row text-center">
