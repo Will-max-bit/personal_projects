@@ -48,8 +48,8 @@
 
     <div class="container">
       <div class="row mt-2">
-        <button type="button" class="btn btn-dark btn-lg mb-1 " >
-         <a href="#links">Navigation</a> 
+        <button type="button"  class="btn btn-dark btn-lg mb-1 " >
+         <a id="card-links" href="#links">Navigation</a> 
         </button>
         <div class="col">
           <div class="card rounded mx-auto d-block" style="width: 18rem; border:none;">
@@ -57,37 +57,36 @@
           </div>
         </div>
         <div class="col">
-          <p class="text-center fs-4">
-            Succulents cray cred, ut nulla church-key you probably haven't heard of them kickstarter YOLO consequat
-            helvetica etsy lo-fi hammock everyday carry.
+          <p class="text-center fs-2">
+            Hello there...  
           </p>
+          <p class="text-center fs-3">I'm Will</p>
+          <p class="text-center fs-3">a long time computer nerd, climber and new developer.</p>
         </div>
       </div>
-      <div class="row">
-        <p class="text-center fs-2">
-          Plaid craft beer non mustache tumeric qui helvetica direct trade mlkshk four loko letterpress hammock 8-bit
-          listicle. Prism 8-bit enamel pin shoreditch microdosing twee man braid dolore ennui meditation cornhole id
-          flexitarian sed. Subway tile hell of ut enim adipisicing sriracha drinking vinegar fanny pack austin authentic
-          chartreuse pork belly jianbing swag.
-        </p>
+      <div class="row text-center fs-2">
+        <p class="">
+          I started my programming journey with a question,<p class="fst-italic">'couldn't I just design something to fit the issue I'm having'</p> <p> My issue at the time being how to find if the movie I want to watch is included in a streaming service I already pay for. I learned later on that APIs can cost money and for a newby, there's a bit that goes into it. I was not undeterred though, I began learning on my own through several resources, eventually finding myself in a Bootcamp where I leveled up my knowledge more than I could imagine.
+          The webpage you're currently on being profolio website, below you will find links to the personal work I have done.
+        </p></p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row" id="links">
         <div class="col-sm-4">
-          
+          <p class="text-center"> Personal project I've undertaken that have a level of completeness worthy of showing here </p>
             <img id='link-cards'src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-fluid" alt="...">
           
           <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
         </div>
         <div class="col-sm-4">
-          
+          <p class="text-center"> Semi-regularly updated coding challenges</p>
             <img id='link-cards'src="{% static 'landingpageapp/code55.jpg'%}" class="img-fluid" alt="...">
           
           <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
         </div>
         <div class="col-sm-4">
-          
+          <p class="text-center"> Running blog of things I'm learning at the time</p>
             <img id='link-cards'src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-fluid" alt="...">
            
           <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
