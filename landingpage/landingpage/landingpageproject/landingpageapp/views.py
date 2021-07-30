@@ -122,6 +122,7 @@ def project_pictures(request):
         })
     return JsonResponse({'project_pictures': project_pictures_data})
 
-# def page_bts(request):
-#     links_data = []
-#     pass
+# use codewars api to get user challenges, concatenate the number to a string 'https://www.codewars.com/kata/+num'
+# use that as a link for the user to see the code
+# see if we can get code image in a modal or maybe use slidr so that the images are thumbnails that enlarge in some way
+# 

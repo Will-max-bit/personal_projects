@@ -112,21 +112,21 @@
       <div class="container-fluid">
         <hr>
         <div class="row no-wrap" v-for="code in posts">
-          <div class="col data">
+          <div class="col data text-center">
             [[code.completed_date]]
           </div>
-          <div class="col data">
+          <div class="col data text-center">
             [[code.title]]
           </div>
-          <div class="col data">
+          <div class="col data text-center">
             [[code.rank]]
           </div>
-          <div class="col">
+          <div class="col text-center">
             <!-- [[code.language_name]] -->
             <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
           </div>
-          <div class="row text-center p-0">
-            <div class="col">
+          <div class="row  p-0">
+            <div class="col text-center">
               <img class=".img-fluid my-1" v-bind:src="code.code_image" alt="">
             </div>
           </div>
