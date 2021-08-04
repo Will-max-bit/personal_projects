@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/vue-easy-lightbox@next/dist/vue-easy-lightbox.umd.min.js"></script>  
   <style>
     .top-col {
       font-family: 'Zen Tokyo Zoo', cursive;
@@ -151,10 +153,8 @@
       ></vue-easy-lightbox>
     </div>
   </div>
-  </div>
-  <script src="https://unpkg.com/@diracleo/vue-enlargeable-image/dist/vue-enlargeable-image.min.js"></script>
-  <script src="https://unpkg.com/vue@next"></script>
-  <script src="https://unpkg.com/vue-easy-lightbox@next/dist/vue-easy-lightbox.umd.min.js"></script>  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </div> 
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -165,9 +165,10 @@
       delimiters: ['[[', ']]'],
       data: {
         visible: false,
+        index: 0,
         posts: [],
         urls: [],
-        img: [
+        imgs: [
           'https://placekitten.com/200/300',
           'https://placekitten.com/g/200/300',
           'https://placekitten.com/g/200/300',
@@ -211,6 +212,8 @@
         // this.titleWars()
       }
     })
+    app.component(VueEasyLightbox.default.name, VueEasyLightbox.default)
+    app.mount('#root')
   </script>
 </body>
 
