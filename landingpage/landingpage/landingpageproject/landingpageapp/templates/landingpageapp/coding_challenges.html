@@ -13,9 +13,7 @@
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/vue@next"></script>
-  <script src="https://unpkg.com/vue-easy-lightbox@next/dist/vue-easy-lightbox.umd.min.js"></script>  
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">  
   <style>
     .top-col {
       font-family: 'Zen Tokyo Zoo', cursive;
@@ -47,7 +45,7 @@
         
       </div>
       <div class="text-center my-1">
-        <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#navigation">
           Navigation
         </button>
       </div>
@@ -68,7 +66,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="navigation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-fullscreen-xl-down">
         <div class="modal-content">
           <div class="modal-header">
@@ -100,7 +98,6 @@
                     style="max-height: 50%;" alt="">
                   <h5 class="text-center">Learning blog</h5>
                 </a>
-
               </div>
             </div>
           </div>
@@ -138,27 +135,30 @@
       </div>
       <div class="">
         <div
-        v-for="(src, index) in imgs"
-        :key='index'
-        class='pic'
-        @click="() => showImg(index)"
+          v-for="(src, index) in images"
+          :key="index"
+          class="pic"
+          @click="() => showImg(index)"
         >
-        <img :src="src">
-      </div>
+          <img :src="src">
+        </div>
       </div>
       <vue-easy-lightbox
-      :visible="visible"
-      :imgs="imgs"
-      @hide="handleHide"
+        :visible="visible"
+        :images="images"
+        :index="index"
+        @hide="handleHide"
       ></vue-easy-lightbox>
     </div>
   </div>
   </div> 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/vue-easy-lightbox@vue2/dist/vue-easy-lightbox.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script>
     let app = new Vue({
       el: '#app',
@@ -169,13 +169,13 @@
         posts: [],
         urls: [],
         imgs: [
-          'https://placekitten.com/200/300',
-          'https://placekitten.com/g/200/300',
-          'https://placekitten.com/g/200/300',
-          'https://placekitten.com/g/200/300',
+        'https://via.placeholder.com/450.png/',
+        'https://via.placeholder.com/300.png/',
+        'https://via.placeholder.com/150.png/',
+        { src: 'https://via.placeholder.com/450.png/', title: 'this is title' }
+      ],
 
-        ]
-
+      images: [],
       },
       methods: {
         CodeWars: function () {
@@ -184,7 +184,11 @@
             method: 'get',
           }).then(response => {
             this.posts = response.data.codewars_posts
-            console.log(response.data)
+            console.log(response.data.codewars_posts)
+            for (image of this.posts){
+              this.images.push(image['code_image'])
+            }
+            console.log(this.images)
           })
         },
         codeChallenges: function (){
@@ -194,7 +198,7 @@
           }).then(response => {
             // console.log(response.data)
             this.urls = response.data
-            console.log(this.urls)
+            // console.log(this.urls)
           })
         },
         showImg (index) {
@@ -212,8 +216,8 @@
         // this.titleWars()
       }
     })
-    app.component(VueEasyLightbox.default.name, VueEasyLightbox.default)
-    app.mount('#root')
+    // app.component(VueEasyLightbox.default.name, VueEasyLightbox.default)
+    // app.mount('#root')
   </script>
 </body>
 
