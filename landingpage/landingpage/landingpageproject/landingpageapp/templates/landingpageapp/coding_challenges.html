@@ -13,24 +13,38 @@
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
   <style>
     .top-col {
       font-family: 'Zen Tokyo Zoo', cursive;
       font-size: 4vw;
     }
+
     .data {
       font-family: 'Righteous', cursive;
       font-size: 2vw;
     }
-    #app{
+
+    /* #app {
       background: url("{% static 'landingpageapp/background1.jpg' %}");
       background-size: cover;
-    }
-    #top-bar{
+    } */
+
+    #top-bar {
       background-color: whitesmoke !important;
       padding: 0;
       margin: 0 auto;
+    }
+    #lb-pic:hover{
+      transform: scale(1.5);
+      box-shadow: 0px 0px 30px -6px #FFFFFF;
+    }
+    #lb-pic{
+      box-shadow: 0px -5px 30px 3px #36D1ED;
+    }
+    #lb {
+      background: url("{% static 'landingpageapp/david-becker-crs2vlkSe98-unsplash.jpg'%}");
+      background-size: cover;
     }
   </style>
   <title>coding challenges</title>
@@ -41,8 +55,9 @@
   <div class="main">
     <div class="container-fluid sticky-top" id="top-bar">
       <div class='text-center'>
-        <a target="_blank" href="https://www.codewars.com/users/Will-max-bit"><img class="text-center" src="https://www.codewars.com/users/Will-max-bit/badges/large"></a>
-        
+        <a target="_blank" href="https://www.codewars.com/users/Will-max-bit"><img class="text-center"
+            src="https://www.codewars.com/users/Will-max-bit/badges/large"></a>
+
       </div>
       <div class="text-center my-1">
         <button type="button" class="btn btn-dark btn-lg mb-1 " data-bs-toggle="modal" data-bs-target="#navigation">
@@ -109,7 +124,7 @@
     </div>
     <!-- end Modal -->
     <div id="app">
-      <div class="container-fluid">
+      <!-- <div class="container-fluid">
         <hr>
         <div class="row no-wrap" v-for="code in posts">
           <div class="col data text-center">
@@ -122,7 +137,7 @@
             [[code.rank]]
           </div>
           <div class="col text-center">
-            <!-- [[code.language_name]] -->
+            
             <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
           </div>
           <div class="row  p-0">
@@ -132,26 +147,22 @@
           </div>
           <hr>
         </div>
-      </div>
-      <div class="">
-        <div
-          v-for="(src, index) in images"
-          :key="index"
-          class="pic"
-          @click="() => showImg(index)"
-        >
-          <img :src="src">
+      </div> -->
+      <div id="lb" class="container">
+        <p class="fs-2 text-center">Some challenges I found interesting</p>
+        <div class="row no-wrap text-center">
+          <div class="col" v-for="(src, index) in imgs" 
+                      :key="index" 
+                      class="pic" 
+                      @click="() => showImg(index)">
+            <img id="lb-pic" style="width: 300px !important;" :src="src" class="my-1">
+          </div>
         </div>
+        <vue-easy-lightbox :visible="visible" :imgs="imgs" :index="index" @hide="handleHide"></vue-easy-lightbox>
       </div>
-      <vue-easy-lightbox
-        :visible="visible"
-        :images="images"
-        :index="index"
-        @hide="handleHide"
-      ></vue-easy-lightbox>
     </div>
   </div>
-  </div> 
+
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -165,17 +176,21 @@
       delimiters: ['[[', ']]'],
       data: {
         visible: false,
+        loop: true,
         index: 0,
         posts: [],
         urls: [],
         imgs: [
-        'https://via.placeholder.com/450.png/',
-        'https://via.placeholder.com/300.png/',
-        'https://via.placeholder.com/150.png/',
-        { src: 'https://via.placeholder.com/450.png/', title: 'this is title' }
-      ],
+          'https://i.imgur.com/yg59q92.jpg',
+          'https://i.imgur.com/hY1TEMt.jpg',
+          'https://i.imgur.com/LEWMyHi.jpg',
+          'https://i.imgur.com/T7XYsvZ.jpg',
+          'https://i.imgur.com/d3Cc9LD.jpg',
+          'https://i.imgur.com/3lL44Wj.jpg',
+          // { src: 'https://i.imgur.com/cyL7RZb.jpg', title: 'this is title' }
+        ],
 
-      images: [],
+        images: [],
       },
       methods: {
         CodeWars: function () {
@@ -185,13 +200,13 @@
           }).then(response => {
             this.posts = response.data.codewars_posts
             console.log(response.data.codewars_posts)
-            for (image of this.posts){
+            for (image of this.posts) {
               this.images.push(image['code_image'])
             }
             console.log(this.images)
           })
         },
-        codeChallenges: function (){
+        codeChallenges: function () {
           axios({
             url: "{% url 'landingpageapp:code_challenges'%}",
             method: 'get',
@@ -201,11 +216,11 @@
             // console.log(this.urls)
           })
         },
-        showImg (index) {
+        showImg(index) {
           this.index = index
           this.visible = true
         },
-        handleHide () {
+        handleHide() {
           this.visible = false
         }
 
