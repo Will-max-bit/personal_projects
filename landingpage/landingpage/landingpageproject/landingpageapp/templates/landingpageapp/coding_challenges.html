@@ -35,16 +35,226 @@
       padding: 0;
       margin: 0 auto;
     }
-    #lb-pic:hover{
+
+    #lb-pic:hover {
       transform: scale(1.5);
       box-shadow: 0px 0px 30px -6px #FFFFFF;
     }
-    #lb-pic{
+
+    #lb-pic {
       box-shadow: 0px -5px 30px 3px #36D1ED;
     }
+
     #lb {
       background: url("{% static 'landingpageapp/david-becker-crs2vlkSe98-unsplash.jpg'%}");
       background-size: cover;
+    }
+
+    #code_chal {
+      color: #F9F0FE;
+      text-shadow: 2px 2px #FF1414;
+    }
+
+    /*  animation css */
+
+    /* body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      background: #141419;
+      color: white;
+    } */
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      max-height: 800px;
+      max-width: 1280px;
+      min-height: 600px;
+      min-width: 1000px;
+    }
+
+    .title {
+      font-family: "Lexend Deca", sans-serif;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 120px);
+      width: 300px;
+      margin-bottom: -6px;
+    }
+
+    .steps {
+      width: 500px;
+      height: 1500px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step {
+      width: 450px;
+      height: 70px;
+      border-top: 2px solid grey;
+      position: relative;
+    }
+
+    .window {
+      position: absolute;
+      border-radius: 20px;
+      height: 500px;
+      width: 500px;
+      overflow: hidden;
+      box-shadow: 6px 6px 16px 0 rgba(217, 210, 200, 0.51),
+        -6px -6px 16px 0 rgba(255, 255, 255, 0.43);
+    }
+
+    .e1,
+    .e2,
+    .i1,
+    .i2,
+    .t1,
+    .t2 {
+      display: inline-block;
+    }
+
+    .e1 {
+      animation: jumpUpRight 4s infinite;
+    }
+
+    .e2 {
+      animation: jumpDownLeft 4s infinite;
+    }
+
+    .i1 {
+      animation: dropDown 4s infinite;
+    }
+
+    .i2 {
+      animation: dropBounce 4s infinite;
+    }
+
+    .t1 {
+      transform-origin: bottom center;
+      animation: leanRight 4s infinite;
+    }
+
+    .t2 {
+      transform-origin: bottom center;
+      animation: leanLeft 4s infinite;
+    }
+
+    @keyframes jumpUpRight {
+      20% {
+        transform: translateY(5%) scaleY(0.9);
+      }
+
+      40% {
+        transform: translateY(-300%) translateX(100%) rotate(90deg) scaleY(1.2);
+      }
+
+      50% {
+        transform: translateY(-160%) translateX(120%) rotate(180deg) scaleY(1);
+      }
+
+      70% {
+        transform: translateY(-170%) translateX(280%) rotate(360deg) scaleY(1);
+      }
+
+      80%,
+      100% {
+        transform: translateY(0) translateX(300%) scaleY(1);
+      }
+    }
+
+    @keyframes jumpDownLeft {
+      20% {
+        transform: translateY(5%) scaleY(0.9);
+      }
+
+      30% {
+        transform: translateY(170%) scaleY(1.2);
+      }
+
+      40% {
+        transform: translateY(180%) scaleY(0.9);
+      }
+
+      50% {
+        transform: translateY(200%) translateX(-120%) rotate(-180deg) scaleY(1);
+      }
+
+      70% {
+        transform: translateY(170%) translateX(-280%) rotate(-360deg) scaleY(1);
+      }
+
+      75% {
+        transform: translateY(175%) translateX(-280%) rotate(-360deg) scaleY(0.9);
+      }
+
+      80%,
+      100% {
+        transform: translateY(0) translateX(-300%) scaleY(1);
+      }
+    }
+
+    @keyframes dropDown {
+      100% {
+        transform: translateY(720%) rotate(-2160deg);
+      }
+    }
+
+    @keyframes leanRight {
+      40% {
+        transform: rotate(40deg);
+      }
+
+      80%,
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes leanLeft {
+      40% {
+        transform: rotate(-45deg);
+      }
+
+      80%,
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes dropBounce {
+      10% {
+        transform: translateY(70%) rotate(180deg);
+      }
+
+      45% {
+        transform: translateY(715%) rotate(180deg) scaleY(1);
+      }
+
+      50% {
+        transform: translateY(725%) rotate(180deg) scaleY(0.8);
+      }
+
+      70% {
+        transform: translateY(660%) rotate(0deg) scaleY(1);
+      }
+
+      95%,
+      100% {
+        transform: translateY(720%) rotate(0deg);
+      }
     }
   </style>
   <title>coding challenges</title>
@@ -148,20 +358,130 @@
           <hr>
         </div>
       </div> -->
+
+
+<hr>
+
+<div class="temp">
+  <div class="container">
+    <div class="window">
+      <div class="steps">
+        <div class="step">
+          <h1 class="title">
+            <span>cha</span>
+            <span class="e1">l</span>
+            <span>a</span>
+            <span class="e2">l</span>
+            <span class="t1">l</span>
+            <span class="i1">e</span>
+            <span class="t2">n</span>
+            <span class="i2">g</span>
+            <span>e</span>
+            <span>s</span>
+          </h1>
+        </div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step">
+          <h1 class="title">
+            <span>c</span>
+            <span class="e1">h</span>
+            <span>a</span>
+            <span class="e2">l</span>
+            <span class="t1">l</span>
+            <span class="i1">e</span>
+            <span class="t2">n</span>
+            <span class="i2">g</span>
+            <span>e</span>
+            <span>s</span>
+          </h1>
+        </div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step">
+          <h1 class="title">
+            <span>r</span>
+            <span class="e1">e</span>
+            <span>p</span>
+            <span class="e2">e</span>
+            <span class="t1">t</span>
+            <span class="i1">i</span>
+            <span class="t2">t</span>
+            <span class="i2">i</span>
+            <span>o</span>
+            <span>n</span>
+          </h1>
+        </div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step">
+          <h1 class="title">
+            <span>r</span>
+            <span class="e1">e</span>
+            <span>p</span>
+            <span class="e2">e</span>
+            <span class="t1">t</span>
+            <span class="i1">i</span>
+            <span class="t2">t</span>
+            <span class="i2">i</span>
+            <span>o</span>
+            <span>n</span>
+          </h1>
+        </div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step">
+          <h1 class="title">
+            <span>r</span>
+            <span class="e1">e</span>
+            <span>p</span>
+            <span class="e2">e</span>
+            <span class="t1">t</span>
+            <span class="i1">i</span>
+            <span class="t2">t</span>
+            <span class="i2">i</span>
+            <span>o</span>
+            <span>n</span>
+          </h1>
+        </div>
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+
       <div id="lb" class="container">
-        <p class="fs-2 text-center">Some challenges I found interesting</p>
+        <p id="code_chal" class="fs-2 text-center">Some challenges I found interesting</p>
         <div class="row no-wrap text-center">
-          <div class="col" v-for="(src, index) in imgs" 
-                      :key="index" 
-                      class="pic" 
-                      @click="() => showImg(index)">
+          <div class="col" v-for="(src, index) in imgs" :key="index" class="pic" @click="() => showImg(index)">
             <img id="lb-pic" style="width: 300px !important;" :src="src" class="my-1">
           </div>
         </div>
         <vue-easy-lightbox :visible="visible" :imgs="imgs" :index="index" @hide="handleHide"></vue-easy-lightbox>
       </div>
     </div>
+
+
+
+
+    <hr>
+
+    
+
+    <hr>
   </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
@@ -170,6 +490,16 @@
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-easy-lightbox@vue2/dist/vue-easy-lightbox.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+  <script>
+    const tl = gsap.timeline();
+
+    tl.to(".steps", {
+      y: "-950px",
+      duration: 20,
+      repeat: -1,
+      ease: "none"
+    });
+  </script>
   <script>
     let app = new Vue({
       el: '#app',
