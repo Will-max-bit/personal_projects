@@ -31,7 +31,7 @@
     } */
 
     #top-bar {
-      background-color: whitesmoke !important;
+      background-color: rgb(155, 152, 152) !important;
       padding: 0;
       margin: 0 auto;
     }
@@ -55,18 +55,16 @@
       text-shadow: 4px 4px #706f6f;
     }
 
-    /*  animation css */
+    body{
+      background-color: rgb(51, 50, 50);
+    }
 
-    /* body {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      width: 100vw;
-      background: #141419;
-      color: white;
-    } */
+    #link_btns {
+      text-overflow: ellipsis !important;
+      overflow: hidden;
+      white-space: nowrap;
+
+    }
   </style>
   <title>coding challenges</title>
 
@@ -85,7 +83,7 @@
           Navigation
         </button>
       </div>
-      <div class="row no-wrap">
+      <!-- <div class="row no-wrap">
         <div class="col top-col">
           Date
         </div>
@@ -98,7 +96,7 @@
         <div class="col top-col">
           Language
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Modal -->
@@ -145,163 +143,199 @@
     </div>
     <!-- end Modal -->
     <div id="app">
-    
-    <div class="container">
-      <p> Box of challenge button links </p>
-      <div class="row">
-        <div class="col">
-          <a href="https://www.google.com/" class="btn btn-info" role="button">Link Button</a>        </div>
 
-      </div>
-    </div>  
+      <div class="container">
+        <p> Box of challenge button links </p>
 
 
-      <div class="container-fluid">
-        <hr> 
-        <div class="row no-wrap" v-for="code in posts">
-          <div class="col data text-center">
-            [[code.completed_date]]
-          </div>
-          <div class="col data text-center">
-            [[code.title]]
-          </div>
-          <div class="col data text-center">
-            [[code.rank]]
-          </div>
-          <div class="col text-center">
+        <!-- start of accordion -->
 
-            <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                Click for the links to my most recent challenges
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <div class="row text-center">
+                  <div class="col" v-for="(value, name) in completeCodeDatum">
+
+                    <a target="_blank" v-bind:href="[[value]]" id="link_btns" class="btn btn-info my-1 mx-1" role="button">[[name]]</a>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
-          <!-- <div class="row  p-0">
+
+          <!-- end of accordion -->
+        </div>
+
+
+        <!-- <div class="container-fluid">
+          <hr>
+          <div class="row no-wrap" v-for="code in posts">
+            <div class="col data text-center">
+              [[code.completed_date]]
+            </div>
+            <div class="col data text-center">
+              [[code.title]]
+            </div>
+            <div class="col data text-center">
+              [[code.rank]]
+            </div>
+            <div class="col text-center">
+
+              <img v-bind:src="code.language_logo" style="max-height: 3rem;" alt="">
+            </div> -->
+            <!-- <div class="row  p-0">
             <div class="col text-center">
               <img class=".img-fluid my-1" v-bind:src="code.code_image" alt="">
             </div>
           </div> -->
-          <hr>
-        </div>
-      </div>
-
-
-      <hr>
-
-
-
-      <hr>
-
-
-      <div id="lb" class="container-fluid">
-        <p id="code_chal" class="fs-2 text-center">Some challenges I found interesting</p>
-        <div class="row no-wrap text-center">
-          <div class="col" v-for="(src, index) in imgs" :key="index" class="pic" @click="() => showImg(index)">
-            <img id="lb-pic" style="width: 300px !important;" :src="src" class="my-1">
+            <!-- <hr>
           </div>
+        </div> -->
+
+
+        <hr>
+
+
+
+        <hr>
+
+
+        <div id="lb" class="container-fluid rounded">
+          <p id="code_chal" class="fs-2 text-center">Some challenges I found interesting</p>
+          <div class="row no-wrap text-center">
+            <div class="col" v-for="(src, index) in imgs" :key="index" class="pic" @click="() => showImg(index)">
+              <img id="lb-pic" style="width: 300px !important;" :src="src" class="my-1 rounded">
+            </div>
+          </div>
+          <vue-easy-lightbox :visible="visible" :imgs="imgs" :index="index" @hide="handleHide"></vue-easy-lightbox>
         </div>
-        <vue-easy-lightbox :visible="visible" :imgs="imgs" :index="index" @hide="handleHide"></vue-easy-lightbox>
       </div>
+
+
+
+
+      <hr>
+
+
+
+      <hr>
     </div>
 
+    <!-- notes -->
+    <!-- center the accordion text -->
+    <!-- play with modal background -->
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-easy-lightbox@vue2/dist/vue-easy-lightbox.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script>
+      const tl = gsap.timeline();
 
+      tl.to(".steps", {
+        y: "-950px",
+        duration: 20,
+        repeat: -1,
+        ease: "none"
+      });
+    </script>
+    <script>
+      let app = new Vue({
+        el: '#app',
+        delimiters: ['[[', ']]'],
+        data: {
+          visible: false,
+          loop: true,
+          index: 0,
+          posts: [],
+          urls: [],
+          imgs: [
+            'https://i.imgur.com/yg59q92.jpg',
+            'https://i.imgur.com/hY1TEMt.jpg',
+            'https://i.imgur.com/LEWMyHi.jpg',
+            'https://i.imgur.com/T7XYsvZ.jpg',
+            'https://i.imgur.com/d3Cc9LD.jpg',
+            'https://i.imgur.com/3lL44Wj.jpg',
+            // { src: 'https://i.imgur.com/cyL7RZb.jpg', title: 'this is title' }
+          ],
 
-    <hr>
-
-
-
-    <hr>
-  </div>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/vue-easy-lightbox@vue2/dist/vue-easy-lightbox.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-  <script>
-    const tl = gsap.timeline();
-
-    tl.to(".steps", {
-      y: "-950px",
-      duration: 20,
-      repeat: -1,
-      ease: "none"
-    });
-  </script>
-  <script>
-    let app = new Vue({
-      el: '#app',
-      delimiters: ['[[', ']]'],
-      data: {
-        visible: false,
-        loop: true,
-        index: 0,
-        posts: [],
-        urls: [],
-        imgs: [
-          'https://i.imgur.com/yg59q92.jpg',
-          'https://i.imgur.com/hY1TEMt.jpg',
-          'https://i.imgur.com/LEWMyHi.jpg',
-          'https://i.imgur.com/T7XYsvZ.jpg',
-          'https://i.imgur.com/d3Cc9LD.jpg',
-          'https://i.imgur.com/3lL44Wj.jpg',
-          // { src: 'https://i.imgur.com/cyL7RZb.jpg', title: 'this is title' }
-        ],
-
-        images: [],
-        completedChallengesData :[]
-      },
-      methods: {
-        CodeWars: function () {
-          axios({
-            url: "{% url 'landingpageapp:code_wars'%}",
-            method: 'get',
-          }).then(response => {
-            this.posts = response.data.codewars_posts
-            // console.log(response.data.codewars_posts)
-            for (image of this.posts) {
-              this.images.push(image['code_image'])
-            }
-          })
+          images: [],
+          completedChallengesData: [],
+          completeCodeDatum: []
         },
-        completedChallenges: function (){
-          axios({
-            url: "{% url 'landingpageapp:completed_challenges' %}",
-            method: 'get',
-          }).then(response => {
-            this.completedChallengesData = response.data
-            console.log(this.completedChallengesData)
-          })
+        methods: {
+          CodeWars: function () {
+            axios({
+              url: "{% url 'landingpageapp:code_wars'%}",
+              method: 'get',
+            }).then(response => {
+              this.posts = response.data.codewars_posts
+              // console.log(response.data.codewars_posts)
+              for (image of this.posts) {
+                this.images.push(image['code_image'])
+              }
+            })
+          },
+          completeCodeData: function () {
+            axios({
+              url: "{% url 'landingpageapp:link_title'%}",
+              method: 'get'
+            }).then(response => {
+              console.log(response.data)
+              this.completeCodeDatum = response.data
+            })
+          },
+          completedChallenges: function () {
+            axios({
+              url: "{% url 'landingpageapp:completed_challenges' %}",
+              method: 'get',
+            }).then(response => {
+              this.completedChallengesData = response.data
+              console.log(this.completedChallengesData)
+            })
+          },
+          codeChallenges: function () {
+            axios({
+              url: "{% url 'landingpageapp:code_challenges'%}",
+              method: 'get',
+            }).then(response => {
+              this.urls = response.data
+              console.log(this.urls)
+            })
+          },
+          showImg(index) {
+            this.index = index
+            this.visible = true
+          },
+          handleHide() {
+            this.visible = false
+          }
+
         },
-        codeChallenges: function () {
-          axios({
-            url: "{% url 'landingpageapp:code_challenges'%}",
-            method: 'get',
-          }).then(response => {
-            this.urls = response.data
-            console.log(this.urls)
-          })
-        },
-        showImg(index) {
-          this.index = index
-          this.visible = true
-        },
-        handleHide() {
-          this.visible = false
+        created: function () {
+          this.CodeWars()
+          this.codeChallenges()
+          this.completedChallenges()
+          this.completeCodeData()
+          // this.titleWars()
         }
-
-      },
-      created: function () {
-        this.CodeWars()
-        this.codeChallenges()
-        this.completedChallenges()
-        // this.titleWars()
-      }
-    })
+      })
     // app.component(VueEasyLightbox.default.name, VueEasyLightbox.default)
     // app.mount('#root')
-  </script>
+    </script>
 </body>
 
 </html>

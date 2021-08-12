@@ -1,6 +1,6 @@
 # from landingpage.landingpageproject import landingpageapp
 from django.shortcuts import render
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, response
 from .models import CodeWars, Post, Category, Projects_pictures
 from datetime import datetime
 from django.utils.timezone import get_current_timezone
@@ -122,7 +122,37 @@ def project_pictures(request):
         })
     return JsonResponse({'project_pictures': project_pictures_data})
 
-# use codewars api to get user challenges, concatenate the number to a string 'https://www.codewars.com/kata/+num'
-# use that as a link for the user to see the code
-# see if we can get code image in a modal or maybe use slidr so that the images are thumbnails that enlarge in some way
-# 
+def link_title(request):
+    response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
+    response_data = response.json()
+    data_response = response_data['data']
+    code_data = []
+    code_data_dict = {}
+    for data in data_response:
+        code_data_dict[data['name']] = str('https://www.codewars.com/kata/' + data['id'])
+    # for code in code_data_dict:
+    #     code_data.append({
+
+    #     })
+    return JsonResponse(code_data_dict, safe=False)
+    
+# getting the challenge link to create a clickable link
+def code_challenges(request):
+    response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
+    response_data = response.json()
+    iteratable = response_data['data']
+    output = []
+    for id in iteratable:
+        output.append('https://www.codewars.com/kata/'+ id['id'])
+    return JsonResponse(output, safe=False)
+
+
+def completed_challenges(request):
+    response = requests.get('http://www.codewars.com/api/v1/users/Will-max-bit/code-challenges/completed?page=0')
+    response_data = response.json()
+    data_response = response_data['data']
+    output = []
+    for name in data_response:
+        output.append(name['name'])
+    return JsonResponse(output, safe=False)
+
