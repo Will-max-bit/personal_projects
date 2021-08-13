@@ -16,6 +16,10 @@
   <title>Landing Page</title>
 </head>
 <style>
+  .github-widget{
+    background: black;
+    border-color: black !important;
+  }
   body {
     background-image: url('{% static "landingpageapp/home_bk.jpg" %}');
   }
@@ -23,6 +27,7 @@
   p {
     color: beige;
   }
+
   /* .cords{
     opacity: 0;
   } */
@@ -32,15 +37,17 @@
     height: 100%;
     object-fit: cover;
   } */
-  #card-links{
+  #card-links {
     color: white !important;
   }
+
   /* .link-hover:hover{
     transform: scale(1.5);
   } */
-  html{
+  html {
     scroll-behavior: smooth;
   }
+
 </style>
 
 <body>
@@ -48,8 +55,8 @@
 
     <div class="container">
       <div class="row mt-2">
-        <button type="button"  class="btn btn-dark btn-lg mb-1 " >
-         <a id="card-links" href="#links">Navigation</a> 
+        <button type="button" class="btn btn-dark btn-lg mb-1 ">
+          <a id="card-links" href="#links">Site Navigation</a>
         </button>
         <div class="col">
           <div class="card rounded mx-auto d-block" style="width: 18rem; border:none;">
@@ -58,7 +65,7 @@
         </div>
         <div class="col">
           <p class="text-center fs-2">
-            Hello there...  
+            Hello there...
           </p>
           <p class="text-center fs-3">I'm Will</p>
           <p class="text-center fs-3">a long time computer nerd, climber and new developer.</p>
@@ -66,40 +73,76 @@
       </div>
       <div class="row text-center fs-2">
         <p class="">
-          I started my programming journey with a question,<p class="fst-italic">'couldn't I just design something to fit the issue I'm having'</p> <p> My issue at the time being how to find if the movie I want to watch is included in a streaming service I already pay for. I learned later on that APIs can cost money and for a newby, there's a bit that goes into it. I was not undeterred though, I began learning on my own through several resources, eventually finding myself in a Bootcamp where I leveled up my knowledge more than I could imagine.
-          The webpage you're currently on being profolio website, below you will find links to the personal work I have done.
-        </p></p>
+          I started my programming journey with a question,
+        <p class="fst-italic">'couldn't I just design something to fit the issue I'm having'</p>
+        <p> My issue at the time being how to find if the movie I want to watch is included in a streaming service I
+          already pay for. I learned later on that APIs can cost money and for a newby, there's a bit that goes into it.
+          I was not undeterred though, I began learning on my own through several resources, eventually finding myself
+          in a Bootcamp where I leveled up my knowledge more than I could imagine.
+          The webpage you're currently on being profolio website, below you will find links to the personal work I have
+          done.
+        </p>
+        </p>
       </div>
     </div>
     <div class="container-fluid">
       <div class="row" id="links">
         <div class="col-sm-4">
-          <p class="text-center"> Personal project I've undertaken that have a level of completeness worthy of showing here </p>
-            <img id='link-cards'src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-fluid" alt="...">
-          
-          <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
+          <p class="text-center"> Personal project I've undertaken that have a level of completeness worthy of showing
+            here </p>
+          <img id='link-cards' src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-fluid" alt="...">
+
+          <h5 class="card-title text-center link-hover"><a id="card-links"
+              href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
         </div>
         <div class="col-sm-4">
           <p class="text-center"> Semi-regularly updated coding challenges</p>
-            <img id='link-cards'src="{% static 'landingpageapp/code55.jpg'%}" class="img-fluid" alt="...">
-          
-          <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
+          <img id='link-cards' src="{% static 'landingpageapp/code55.jpg'%}" class="img-fluid" alt="...">
+
+          <h5 class="card-title text-center link-hover"><a id="card-links"
+              href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
         </div>
         <div class="col-sm-4">
           <p class="text-center"> Running blog of things I'm learning at the time</p>
-            <img id='link-cards'src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-fluid" alt="...">
-           
-          <h5  class="card-title text-center link-hover"><a id="card-links" href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
+          <img id='link-cards' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-fluid" alt="...">
+
+          <h5 class="card-title text-center link-hover"><a id="card-links"
+              href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
         </div>
       </div>
     </div>
+    <div class="container-fluid">
+      <div class="row text-center">
+        <div class="col">
+          <p>temporary text holder for professional projects</p>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col align-self-center">
+          <p class="text-center">github</p>
+        </div>
+        <div class="col">
+          <div class="github-widget" data-username="Will-max-bit"></div>
+        </div>
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="william-hermann-432bb846" data-version="v1"></div>
+        </div>
+        <div class="col align-self-center">
+          <p class="text-center">LinkedIn</p>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
-  {% comment %} 
+  {% comment %}
   add more to the homepage bottom
   git hub link
   linkedin link
-  
-   {% endcomment %}
+
+  {% endcomment %}
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
