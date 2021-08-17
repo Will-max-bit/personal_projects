@@ -6,43 +6,58 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Assistant:wght@300&family=Bangers&family=Changa+One&family=Chonburi&family=Gowun+Batang:wght@700&family=Monoton&family=Passion+One&family=Prompt:wght@200&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Assistant:wght@300&family=Bangers&family=Changa+One&family=Chonburi&family=Gowun+Batang:wght@700&family=Monoton&family=Passion+One&family=Prompt:wght@200&display=swap"
+    rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <style>
-  
+
   </style>
   <title>Landing Page</title>
 </head>
 <style>
-  #git-txt{
+  #git-txt {
     font-family: 'Arima Madurai', cursive;
+    font-size: 3em;
   }
-  #linkd{
+
+  #linkd {
     font-family: 'Assistant', sans-serif;
+    font-size: 3em;
   }
-  #intro-para{
+
+  #intro-para {
     font-family: 'Bangers', cursive;
   }
-  #main-para{
+
+  .main-para {
     font-family: 'Changa One', cursive;
   }
-  #intro{
+
+  #intro {
     font-family: 'Gowun Batang', serif;
   }
-  #site-links{
+
+  #site-links {
     font-family: 'Monoton', cursive;
   }
-  #page-blurbs{
+
+  #page-blurbs {
     font-family: 'Passion One', cursive;
   }
-  #slide-shows{
+
+  #slide-shows {
     font-family: 'Prompt', sans-serif;
+    
+  }
+  img{
+    border-radius: 15px;
   }
   .github-widget {
     background: black;
@@ -50,19 +65,22 @@
     border-radius: 20px;
 
   }
-  .img-caro{
+
+  .img-caro {
     width: auto;
     height: 700px;
     max-height: 700px;
   }
 
+
   body {
-    background-image: url('{% static "landingpageapp/home_bk.jpg" %}');
+    background-image: url('{% static "landingpageapp/home_bk.jpg" %}') !important;
   }
 
   p,
-  h3 {
-    color: beige;
+  h3,
+  h5 {
+    color: beige !important;
   }
 
   /* .cords{
@@ -80,18 +98,46 @@
 
 
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
   }
+
+  hr {
+    color: white;
+    border: 5px solid white;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  #foot {
+    background-color: black;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* #navi-bar {
+    background-color: black;
+  } */
 </style>
 
 <body>
   <div id="app">
+    <div class="container" id="intro-box">
+      <div class="row text-center mt-2" id="navi-bar">
 
-    <div class="container">
-      <div class="row mt-2">
-        <button type="button" class="btn btn-dark btn-lg mb-1 ">
-          <a id="card-links" href="#links">Site Navigation</a>
-        </button>
+        <div class="col">
+          <button type="button" class="btn btn-dark btn-lg mb-1 ">
+            <a id="card-links" href="#links">Site Navigation</a>
+          </button>
+        </div>
+        <div class="col">
+          <button type="button" class="btn btn-dark btn-lg mb-1 ">
+            <a id="card-links" href="#foot">Contact Me</a>
+          </button>
+        </div>
+      </div>
+      <div class="row">
         <div class="col">
           <div class="card rounded mx-auto d-block" style="width: 18rem; border:none;">
             <img src="{% static 'landingpageapp/profile_image.jpg'%}" class="card-img-top" alt="">
@@ -105,22 +151,27 @@
           <p class="text-center fs-3">a long time computer nerd, climber and web developer.</p>
         </div>
       </div>
+
       <div class="row text-center fs-2">
         <div id="intro-para">
-        <p class="">
-          I started my programming journey with a question,
-        <p class="fst-italic">'couldn't I just design something to fit the issue I'm having'</p>
-      </div>
-        <p id="main-para"> My issue at the time being how to find if the movie I want to watch is included in a streaming service I
+          <p class="">
+            I started my programming journey with a question,
+          <p>'couldn't I just design something to fit the issue I'm having'</p>
+        </div>
+        <p class="main-para"> My issue at the time being how to find if the movie I want to watch is included in a
+          streaming service I
           already pay for. I learned later on that APIs can cost money and for a newby, there's a bit that goes into it.
+        <p class="main-para">
           I was not undeterred though, I began learning on my own through several resources, eventually finding myself
           in a Bootcamp where I leveled up my knowledge more than I could imagine.
           The webpage you're currently on being profolio website, below you will find links to the personal work I have
           done.
         </p>
         </p>
+        </p>
       </div>
     </div>
+    <hr>
     <div class="container-fluid">
       <div class="row">
         <div class="col">
@@ -163,10 +214,11 @@
         </div>
       </div>
     </div>
+    <hr>
     <div class="container-fluid">
       <div class="row text-center">
         <div class="col">
-          <p>External professional profiles</p>
+          <h3 class="text-center">External professional profiles</h3>
         </div>
       </div>
       <div class="row align-items-center">
@@ -189,14 +241,18 @@
       </div>
     </div>
   </div>
+  <hr>
   <div class="container">
     <h3 class="text-center"> Some of my other hobbies</h3>
     <!-- carousel starts here -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner" id="slide-show">
         <div class="carousel-item active">
@@ -221,30 +277,63 @@
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
     <!-- carousel ends here -->
   </div>
-  <footer class="container" id="foot">
+  <footer class="container-fluid mt-2" id="foot">
     <div class="row">
-      <div class="col">
+      <div class="col text-center">
+        <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Contact Me
+        </button>
+        <button type="button" class="btn btn-outline-dark"><a href="intro-box">Top</a></button>
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body container">
+                <div class="row">
+                  <div class="col">
+                    <a type="button" class="btn btn-outline-dark" href="mailto: dvw7juy7k@relay.firefox.com">Email
+                      me</a>
+                  </div>
+                  <div class="col">
+                    <a type="button" class="btn btn-outline-dark" href="tel:541-887-0365">Call me</a>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer container ">
+                <div class="row text-center">
+                  <div class="col">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
-  {% comment %}
-  add more to the homepage bottom
-  git hub link
-  linkedin link
-
-  {% endcomment %}
+  <!-- 
+    add boxes around content, or shaded etc
+   -->
   <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
   <script src="https://unpkg.com/github-card@1.2.1/dist/widget.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
