@@ -31,6 +31,13 @@
     font-size: 3em;
   }
 
+  #passi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5;
+  }
+
   button,
   a {
     text-decoration: none !important;
@@ -44,10 +51,12 @@
 
   #intro-para {
     font-family: 'Bangers', cursive;
+    font-size: 1em;
   }
 
   .main-para {
     font-family: 'Changa One', cursive;
+    font-size: 1em;
   }
 
   #intro {
@@ -69,7 +78,9 @@
     font-family: 'Prompt', sans-serif;
 
   }
-
+  /* hr{
+    border-top: 3px solid #662c0a;
+  } */
   img {
     border-radius: 15px;
   }
@@ -88,13 +99,18 @@
   }
 
 
-  body {
+  #intro-box{
     background-image: url('{% static "landingpageapp/home_bk.jpg" %}') !important;
+    background-size: contain;
   }
 
   p,
   h3,
-  h5 {
+  h5,
+  ul,
+  li,
+  h4,
+  h1 {
     color: beige !important;
   }
 
@@ -116,19 +132,15 @@
     scroll-behavior: smooth !important;
   }
 
-  hr {
-    color: white;
-    border: 5px solid white;
-    border-radius: 5px;
-    margin: 5px;
-  }
-
   #foot {
-    background-color: black;
+    background-color:#662c0a;
     height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  .main-body{
+    background-color: #8C3B0D;
   }
 
   /* #navi-bar {
@@ -137,10 +149,8 @@
 </style>
 
 <body>
-  <div id="app">
-    <div class="container" id="intro-box">
-      <div class="row text-center mt-2" id="navi-bar">
-
+    <div class="container-fluid" id="intro-box">
+      <div class="row text-center" id="navi-bar">
         <div class="col">
           <button type="button" class="btn btn-dark btn-lg mb-1 ">
             <a id="card-links" href="#links">Site Navigation</a>
@@ -154,7 +164,14 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="card rounded mx-auto d-block" style="width: 18rem; border:none;">
+          <h1 class="text-center">
+            Will Hermann
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card rounded mx-auto d-block mb-3" style="width: 18rem; border:none;">
             <img src="{% static 'landingpageapp/profile_image.jpg'%}" class="card-img-top" alt="">
           </div>
         </div>
@@ -163,17 +180,46 @@
             Hello there...
           </p>
           <p class="text-center fs-3">I'm Will</p>
-          <p class="text-center fs-3">a long time computer nerd, climber and web developer.</p>
+          <p class="text-center fs-3">a long time computer nerd, climber and software developer.</p>
         </div>
       </div>
-
+    </div>
+    <div class="container-fluid main-body">
       <div class="row text-center fs-2">
-        <div id="intro-para">
-          <p class="">
+        <div class="col" id="intro-para">
+          <p>
             I started my programming journey with a question,
           <p>'couldn't I just design something to fit the issue I'm having'</p>
         </div>
-        <p class="main-para"> My issue at the time being how to find if the movie I want to watch is included in a
+      </div>
+      <div class="row  mt-15">
+        <div id="passi" class="col text-center align-self-center">
+          <h4 class="fs-1">My Passions</h4>
+        </div>
+        <div class="col fs-3">
+          <ul>
+            <li>learning</li>
+            <li>Helping people</li>
+            <li>Climbing with friends</li>
+            <li>Creative solutions</li>
+            <li>Connecting information</li>
+            <li>Artistic expression</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="text-center">All of my life I've searched for the most optimized way to accomplish a given task, efficiency and ease of use has always been key to me</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p class="text-center fs-2">Below you will find links to pages featuring code I'm working with and links to
+            other sites I am on.</p>
+        </div>
+        <hr>
+      </div>
+      <!-- <p class="main-para"> My issue at the time being how to find if the movie I want to watch is included in a
           streaming service I
           already pay for. I learned later on that APIs can cost money and for a newby, there's a bit that goes into it.
         <p class="main-para">
@@ -181,13 +227,11 @@
           in a Bootcamp where I leveled up my knowledge more than I could imagine.
           The webpage you're currently on being profolio website, below you will find links to the personal work I have
           done.
-        </p>
-        </p>
-        </p>
-      </div>
+        </p> -->
+      <!-- </p>
+      </p> -->
     </div>
-    <hr>
-    <div class="container-fluid">
+    <div class="container-fluid main-body mt-0">
       <div class="row">
         <div class="col">
           <h3 id="site-links" class="text-center site-links">Main site links</h5>
@@ -227,10 +271,10 @@
           <h5 class="card-title text-center link-hover"><a id="card-links"
               href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
         </div>
+        <hr>
       </div>
     </div>
-    <hr>
-    <div class="container-fluid">
+    <div class="container-fluid main-body mt-0">
       <div class="row text-center">
         <div class="col">
           <h3 class="text-center site-links">Professional profiles</h3>
@@ -254,14 +298,12 @@
             data-version="v1"></div>
         </div>
       </div>
-
     </div>
-  </div>
-  <hr>
-  <div class="container">
+
+  <div class="container-fluid main-body">
     <h3 class="text-center site-links"> Some of my other hobbies</h3>
     <!-- carousel starts here -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions mb-2" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
           aria-current="true" aria-label="Slide 1"></button>
@@ -293,7 +335,7 @@
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+      <button class="carousel-control-prev mb-2" type="button" data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -305,8 +347,10 @@
       </button>
     </div>
     <!-- carousel ends here -->
+    <br>
+      <br>
   </div>
-  <footer class="container-fluid mt-2" id="foot">
+  <footer class="container-fluid" id="foot">
     <div class="row">
       <div class="col text-center">
         <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -344,6 +388,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </footer>
   <!-- 
@@ -356,15 +401,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
     crossorigin="anonymous"></script>
-  <script>
-    let app = new Vue({
-      el: '#app',
-      delimiters: ['[[', ']]'],
-      data: {
-        test: 'this is a test!!!!!'
-      }
-    })
-  </script>
 </body>
 
 </html>
