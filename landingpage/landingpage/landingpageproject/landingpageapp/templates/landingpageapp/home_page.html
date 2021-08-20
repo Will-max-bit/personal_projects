@@ -78,6 +78,7 @@
     font-family: 'Prompt', sans-serif;
 
   }
+
   /* hr{
     border-top: 3px solid #662c0a;
   } */
@@ -99,7 +100,7 @@
   }
 
 
-  #intro-box{
+  #intro-box {
     background-image: url('{% static "landingpageapp/home_bk.jpg" %}') !important;
     background-size: contain;
   }
@@ -133,14 +134,20 @@
   }
 
   #foot {
-    background-color:#662c0a;
+    background-color: #662c0a;
     height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .main-body{
+
+  .main-body {
     background-color: #8C3B0D;
+  }
+
+  .pass-img {
+    max-width: 100%;
+    max-height: 100%;
   }
 
   /* #navi-bar {
@@ -149,77 +156,82 @@
 </style>
 
 <body>
-    <div class="container-fluid" id="intro-box">
-      <div class="row text-center" id="navi-bar">
-        <div class="col">
-          <button type="button" class="btn btn-dark btn-lg mb-1 ">
-            <a id="card-links" href="#links">Site Navigation</a>
-          </button>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-dark btn-lg mb-1 ">
-            <a id="card-links" href="#foot">Contact Me</a>
-          </button>
-        </div>
+  <div class="container-fluid" id="intro-box">
+    <div class="row text-center" id="navi-bar">
+      <div class="col">
+        <button type="button" class="btn btn-dark btn-lg mb-1 ">
+          <a id="card-links" href="#links">Site Navigation</a>
+        </button>
       </div>
-      <div class="row">
-        <div class="col">
-          <h1 class="text-center">
-            Will Hermann
-          </h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="card rounded mx-auto d-block mb-3" style="width: 18rem; border:none;">
-            <img src="{% static 'landingpageapp/profile_image.jpg'%}" class="card-img-top" alt="">
-          </div>
-        </div>
-        <div class="col" id="intro">
-          <p class="text-center fs-2">
-            Hello there...
-          </p>
-          <p class="text-center fs-3">I'm Will</p>
-          <p class="text-center fs-3">a long time computer nerd, climber and software developer.</p>
-        </div>
+      <div class="col">
+        <button type="button" class="btn btn-dark btn-lg mb-1 ">
+          <a id="card-links" href="#foot">Contact Me</a>
+        </button>
       </div>
     </div>
-    <div class="container-fluid main-body">
-      <div class="row text-center fs-2">
-        <div class="col" id="intro-para">
-          <p>
-            I started my programming journey with a question,
-          <p>'couldn't I just design something to fit the issue I'm having'</p>
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center">
+          Will Hermann
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card rounded mx-auto d-block mb-3" style="width: 18rem; border:none;">
+          <img src="{% static 'landingpageapp/profile_image.jpg'%}" class="card-img-top" alt="">
         </div>
       </div>
-      <div class="row  mt-15">
-        <div id="passi" class="col text-center align-self-center">
-          <h4 class="fs-1">My Passions</h4>
-        </div>
-        <div class="col fs-3">
-          <ul>
-            <li>learning</li>
-            <li>Helping people</li>
-            <li>Climbing with friends</li>
-            <li>Creative solutions</li>
-            <li>Connecting information</li>
-            <li>Artistic expression</li>
-          </ul>
-        </div>
+      <div class="col" id="intro">
+        <p class="text-center fs-2">
+          Hello there...
+        </p>
+        <p class="text-center fs-3">I'm Will</p>
+        <p class="text-center fs-3">a long time computer nerd, climber and software developer.</p>
       </div>
-      <div class="row">
-        <div class="col">
-          <p class="text-center">All of my life I've searched for the most optimized way to accomplish a given task, efficiency and ease of use has always been key to me</p>
-        </div>
+    </div>
+  </div>
+  <div class="container-fluid main-body">
+    <div class="row text-center fs-2">
+      <div class="col" id="intro-para">
+        <p>
+          I started my programming journey with a question,
+        <p>'couldn't I just design something to fit the issue I'm having'</p>
       </div>
-      <div class="row">
+    </div>
+    <div class="row  mt-15">
+      <div class="col">
+        <img class="pass-img " src="{% static 'landingpageapp/pass-img.jpg' %}" alt="">
+      </div>
+      <div id="passi" class="col text-center align-self-center">
+        <h4 class="fs-1">My Passions</h4>
+      </div>
+      <div class="col align-self-center fs-3">
+        <ul>
+          <li>learning</li>
+          <li>Helping people</li>
+          <li>Climbing with friends</li>
+          <li>Creative solutions</li>
+          <li>Connecting information</li>
+          <li>Artistic expression</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p class="text-center fs-3">All of my life I've searched for the most optimized way to accomplish a given task,
+          efficiency and ease of use has always been key to me, below is a demonstration of my attempt at that through
+          programming</p>
+      </div>
+      <hr>
+    </div>
+    <!-- <div class="row">
         <div class="col">
           <p class="text-center fs-2">Below you will find links to pages featuring code I'm working with and links to
             other sites I am on.</p>
         </div>
-        <hr>
-      </div>
-      <!-- <p class="main-para"> My issue at the time being how to find if the movie I want to watch is included in a
+      </div> -->
+    <!-- <p class="main-para"> My issue at the time being how to find if the movie I want to watch is included in a
           streaming service I
           already pay for. I learned later on that APIs can cost money and for a newby, there's a bit that goes into it.
         <p class="main-para">
@@ -228,77 +240,77 @@
           The webpage you're currently on being profolio website, below you will find links to the personal work I have
           done.
         </p> -->
-      <!-- </p>
+    <!-- </p>
       </p> -->
+  </div>
+  <div class="container-fluid main-body mt-0">
+    <div class="row">
+      <div class="col">
+        <h3 id="site-links" class="text-center site-links">Main site links</h5>
+      </div>
     </div>
-    <div class="container-fluid main-body mt-0">
-      <div class="row">
-        <div class="col">
-          <h3 id="site-links" class="text-center site-links">Main site links</h5>
-        </div>
+    <div class="row" id="page-blurbs">
+      <div class="col">
+        <p class="text-center">Projects I've undertaken that have a level of completeness worthy of showing
+          here </p>
       </div>
-      <div class="row" id="page-blurbs">
-        <div class="col">
-          <p class="text-center">Projects I've undertaken that have a level of completeness worthy of showing
-            here </p>
-        </div>
-        <div class="col">
-          <p class="text-center"> Semi-regularly updated coding challenges</p>
-        </div>
-        <div class="col">
-          <p class="text-center"> Running blog of things I'm learning at the time</p>
-        </div>
+      <div class="col">
+        <p class="text-center"> Semi-regularly updated coding challenges</p>
       </div>
-      <div class="row" id="links">
-        <div class="col-sm-4">
-
+      <div class="col">
+        <p class="text-center"> Running blog of things I'm learning at the time</p>
+      </div>
+    </div>
+    <div class="row" id="links">
+      <div class="col-sm-4">
+        <a id="card-links" href="{% url 'landingpageapp:projects' %}">
           <img id='link-cards' src="{% static 'landingpageapp/projects_edited.jpg'%}" class="img-fluid" alt="...">
 
-          <h5 class="card-title text-center link-hover"><a id="card-links"
-              href="{% url 'landingpageapp:projects' %}">Projects</a></h5>
-        </div>
-        <div class="col-sm-4">
+          <h5 class="card-title text-center link-hover">Projects
+        </a></h5>
+      </div>
+      <div class="col-sm-4">
+<a id="card-links"
+            href="{% url 'landingpageapp:coding_challenges'%}">
+        <img id='link-cards' src="{% static 'landingpageapp/code55.jpg'%}" class="img-fluid" alt="...">
 
-          <img id='link-cards' src="{% static 'landingpageapp/code55.jpg'%}" class="img-fluid" alt="...">
+        <h5 class="card-title text-center link-hover">Coding challenges</a></h5>
+      </div>
+      <div class="col-sm-4">
+<a id="card-links" href="{% url 'landingpageapp:index'%}">
+        <img id='link-cards' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-fluid" alt="...">
 
-          <h5 class="card-title text-center link-hover"><a id="card-links"
-              href="{% url 'landingpageapp:coding_challenges'%}">Coding challenges</a></h5>
-        </div>
-        <div class="col-sm-4">
-
-          <img id='link-cards' src="{% static 'landingpageapp/blog_edited.jpg'%}" class="img-fluid" alt="...">
-
-          <h5 class="card-title text-center link-hover"><a id="card-links"
-              href="{% url 'landingpageapp:index'%}">learning blog</a> </h5>
-        </div>
-        <hr>
+        <h5 class="card-title text-center link-hover">learning
+            blog</a> </h5>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="container-fluid main-body mt-0">
+    <div class="row text-center">
+      <div class="col">
+        <h3 class="text-center site-links">Professional profiles</h3>
       </div>
     </div>
-    <div class="container-fluid main-body mt-0">
-      <div class="row text-center">
-        <div class="col">
-          <h3 class="text-center site-links">Professional profiles</h3>
-        </div>
+    <div class="row align-items-center">
+      <div class="col align-self-center">
+        <p id="git-txt" class="text-center">GitHub</p>
       </div>
-      <div class="row align-items-center">
-        <div class="col align-self-center">
-          <p id="git-txt" class="text-center">GitHub</p>
-        </div>
-        <div class="col align-self-end">
-          <div style="margin: 0 auto !important;" class="github-widget" data-username="Will-max-bit"></div>
-        </div>
-      </div>
-      <div class="row flex-row-reverse">
-        <div class="col align-self-center">
-          <p id="linkd" class="text-center">LinkedIn</p>
-        </div>
-        <div class="col align-self-center">
-          <div style="margin: 0 auto !important;" class="badge-base LI-profile-badge" data-locale="en_US"
-            data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="william-hermann-432bb846"
-            data-version="v1"></div>
-        </div>
+      <div class="col align-self-end">
+        <div style="margin: 0 auto !important;" class="github-widget" data-username="Will-max-bit"></div>
       </div>
     </div>
+    <div class="row flex-row-reverse">
+      <div class="col align-self-center">
+        <p id="linkd" class="text-center">LinkedIn</p>
+      </div>
+      <div class="col align-self-center">
+        <div style="margin: 0 auto !important;" class="badge-base LI-profile-badge" data-locale="en_US"
+          data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="william-hermann-432bb846"
+          data-version="v1"></div>
+      </div>
+    </div>
+  </div>
 
   <div class="container-fluid main-body">
     <h3 class="text-center site-links"> Some of my other hobbies</h3>
@@ -348,7 +360,7 @@
     </div>
     <!-- carousel ends here -->
     <br>
-      <br>
+    <br>
   </div>
   <footer class="container-fluid" id="foot">
     <div class="row">
@@ -388,7 +400,7 @@
           </div>
         </div>
       </div>
-      
+
     </div>
   </footer>
   <!-- 
