@@ -2,7 +2,6 @@
 <!doctype html>
 <html lang="en">
 <!-- notes
-fix navi header, make center
 research vue use string at media size
 -->
 <head>
@@ -68,7 +67,9 @@ research vue use string at media size
       color: #F9F0FE;
       text-shadow: 4px 4px #706f6f;
     }
-
+    #bot-btn{
+      color: beige;
+    }
     body {
       background-color: #8C3B0D;
     }
@@ -117,14 +118,14 @@ research vue use string at media size
 <body>
  
   <div class="container mt-1" id="top-bar">
-    <div class="row justify-content-center text-center no-wrap" id="intro-box">
+    <div class="row justify-content-center text-center" id="intro-box">
       <div class="col-sm-4 ">
         <a href="{% url 'landingpageapp:home_page'%}">
           <p class="text-nav">Home</p>
         </a>
       </div>
       <div class="col-sm-4 ">
-        <a href="{% static 'landingpageapp/projects_edited.jpg'%}">
+        <a href="{% url 'landingpageapp:projects' %}">
           <p class="text-nav">Projects</p>
         </a>
       </div>
@@ -136,14 +137,16 @@ research vue use string at media size
     </div>
 
   </div>
-  <div class='row text-center'>
-    <div class="col">
-      <a target="_blank" href="https://www.codewars.com/users/Will-max-bit"><img class="text-center"
-          src="https://www.codewars.com/users/Will-max-bit/badges/small"></a>
+  <div class="container">
+    <div class='row text-center'>
+      <div class="col">
+        <a target="_blank" href="https://www.codewars.com/users/Will-max-bit"><img class="text-center"
+            src="https://www.codewars.com/users/Will-max-bit/badges/small"></a>
+      </div>
     </div>
   </div>
 
-  <div class="modal fade" id="navigation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="navigation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen-xl-down">
       <div class="modal-content">
         <div class="modal-header">
@@ -183,7 +186,7 @@ research vue use string at media size
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- end Modal -->
   <div id="app">
 
@@ -237,13 +240,13 @@ research vue use string at media size
       </div>
     </div>
   </div>
-  <footer class="container-fluid" id="foot">
+  <footer class="container-fluid mt-3" id="foot">
     <div class="row">
       <div class="col text-center">
         <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
           Contact Me
         </button>
-        <button type="button" class="btn btn-dark"><a href="#intro-box">Back to the Top</a></button>
+        <button type="button" class="btn btn-dark"><a id="bot-btn" href="#intro-box">Back to the Top</a></button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -269,13 +272,11 @@ research vue use string at media size
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </footer>
 
