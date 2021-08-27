@@ -19,6 +19,9 @@ research vue use string at media size
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200&display=swap" rel="stylesheet">
   <style>
     .top-col {
       font-family: 'Zen Tokyo Zoo', cursive;
@@ -83,6 +86,7 @@ research vue use string at media size
 
     #foot {
       background-color: #662c0a;
+      background-size: 100%;
       height: 100px;
       display: flex;
       flex-direction: column;
@@ -109,6 +113,20 @@ research vue use string at media size
     #link-box {
       font-family: 'Amatic SC', cursive;
       font-size: 2.5rem;
+    }
+    #gitty{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 400px;
+      font-family: 'Arima Madurai', cursive;
+      font-size: 3.5rem;
+    }
+    #git-img{
+      
+      box-shadow: 1px 8px 22px 0px #261F0E;
+      border-radius: 9px;
+
     }
   </style>
   <title>coding challenges</title>
@@ -212,6 +230,11 @@ research vue use string at media size
               data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
                 <div class="row text-center">
+                  <div class="row">
+                    <div class="col">
+                      <h3 class="text-center">CodeWars</h3>
+                    </div>
+                  </div>
                   <div class="col" v-for="(value, name) in completeCodeDatum">
 
                     <a target="_blank" v-bind:href="[[value]]" id="link_btns" class="btn btn-info my-1 mx-1"
@@ -225,8 +248,19 @@ research vue use string at media size
           <!-- end of accordion -->
         </div>
       </div>
-
-
+<!-- 
+  fix bottom footer div somehow!!
+ -->
+<div class="container-fluid" id="gitty">
+  <div class="row justify-content-center">
+    <div class="col-6 align-self-center">
+     <p >Challenge Repo</p>  
+    </div>
+    <div id="git-img" class="col-2 align-self-center">
+      <a  target="_blank" href="https://github.com/Will-max-bit/PDXCode-guild-assignments/tree/main/Codewars"><img src="{% static 'landingpageapp/git.png'%}" alt=""></a>
+    </div>
+  </div>
+</div>
 
 
       <div id="lb" class="container-fluid rounded">
@@ -240,8 +274,9 @@ research vue use string at media size
       </div>
     </div>
   </div>
+
   <footer class="container-fluid mt-3" id="foot">
-    <div class="row">
+    <div class="row ">
       <div class="col text-center">
         <button type="button" class="btn btn-dark " data-bs-toggle="modal" data-bs-target="#exampleModal">
           Contact Me
