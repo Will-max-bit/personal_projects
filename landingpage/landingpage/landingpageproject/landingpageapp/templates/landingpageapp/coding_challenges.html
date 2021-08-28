@@ -25,7 +25,7 @@ research vue use string at media size
   <style>
     .top-col {
       font-family: 'Zen Tokyo Zoo', cursive;
-      font-size: 4vw;
+      font-size: 2vw;
     }
 
     .data {
@@ -48,7 +48,6 @@ research vue use string at media size
       padding: 0;
       margin: 0 auto;
     }
-
     #lb-pic:hover {
       transform: scale(1.5);
       box-shadow: 0px 0px 30px -6px #FFFFFF;
@@ -112,7 +111,7 @@ research vue use string at media size
 
     #link-box {
       font-family: 'Amatic SC', cursive;
-      font-size: 2.5rem;
+      font-size: 4rem;
     }
     #gitty{
       display: flex;
@@ -120,13 +119,27 @@ research vue use string at media size
       justify-content: center;
       min-height: 400px;
       font-family: 'Arima Madurai', cursive;
-      font-size: 3.5rem;
+      font-size: 4rem;
+    }
+    #cody{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Arima Madurai', cursive;
+      min-height: 400px;
+      font-size: 4rem;
     }
     #git-img{
       
       box-shadow: 1px 8px 22px 0px #261F0E;
       border-radius: 9px;
 
+    }
+    #intro-txt{
+      /* display: flex;
+      flex-direction: column;
+      justify-self: center; */
+      min-height: 250px;
     }
   </style>
   <title>coding challenges</title>
@@ -155,14 +168,14 @@ research vue use string at media size
     </div>
 
   </div>
-  <div class="container">
+  <!-- <div class="container">
     <div class='row text-center'>
       <div class="col">
         <a target="_blank" href="https://www.codewars.com/users/Will-max-bit"><img class="text-center"
             src="https://www.codewars.com/users/Will-max-bit/badges/small"></a>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- <div class="modal fade" id="navigation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen-xl-down">
@@ -207,6 +220,15 @@ research vue use string at media size
   </div> -->
   <!-- end Modal -->
   <div id="app">
+    <div class="container-fluid mt-5" id="intro-txt">
+      <div class="row justify-content-end">
+        <div class="col-4 ">
+          <article class="fs-3 text-center">
+            I initially started doing programming as a way to expose myself to the code by forcing myself to use the language in different ways. That tactic worked but I didn't stop picking a challenge out, I found it to be a good way to keep my skills up and a nice break from the documentation. 
+          </article>
+        </div>
+      </div>
+    </div>
 
     <div class="container">
       <div class="row mb-0">
@@ -214,6 +236,7 @@ research vue use string at media size
           <p class="text-center" id="link-box"> Box of challenge button links </p>
         </div>
       </div>
+
 
 
       <!-- start of accordion -->
@@ -237,7 +260,7 @@ research vue use string at media size
                   </div>
                   <div class="col" v-for="(value, name) in completeCodeDatum">
 
-                    <a target="_blank" v-bind:href="[[value]]" id="link_btns" class="btn btn-info my-1 mx-1"
+                    <a target="_blank" v-bind:href="[[value]]" id="link_btns" class="btn btn-outline-dark my-1 mx-1"
                       role="button">[[name]]</a>
                   </div>
                 </div>
@@ -262,6 +285,17 @@ research vue use string at media size
   </div>
 </div>
 
+<div class="container-fluid mb-3" id="cody">
+  <div class='row text-center'>
+    <div class="col">
+      <a target="_blank" href="https://www.codewars.com/users/Will-max-bit"><img class="text-center"
+          src="https://www.codewars.com/users/Will-max-bit/badges/large"></a>
+    </div>
+    <div class="col">
+<p>Codewars profile</p>
+    </div>
+  </div>
+</div>
 
       <div id="lb" class="container-fluid rounded">
         <p id="code_chal" class="fs-2 text-center">Some challenges I found interesting</p>
